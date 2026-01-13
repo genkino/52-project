@@ -18,40 +18,12 @@ const posts: Record<string, { title: string; date: string; content: string }> = 
       <p>앞으로 더 많은 포스트를 작성할 예정입니다!</p>
     `,
   },
-  'nextjs-blog': {
-    title: 'Next.js로 블로그 만들기',
-    date: '2024-01-20',
-    content: `
-      <p>Next.js를 사용하여 정적 블로그를 만드는 방법에 대해 알아봅시다.</p>
-      <h2>Next.js의 장점</h2>
-      <p>Next.js는 React 기반의 프레임워크로, 다음과 같은 장점이 있습니다:</p>
-      <ul>
-        <li>서버 사이드 렌더링(SSR)</li>
-        <li>정적 사이트 생성(SSG)</li>
-        <li>자동 코드 스플리팅</li>
-        <li>최적화된 이미지 로딩</li>
-      </ul>
-      <h2>블로그에 적용하기</h2>
-      <p>Next.js의 App Router를 사용하면 동적 라우팅을 쉽게 구현할 수 있습니다. 각 포스트는 파일 시스템 기반 라우팅을 통해 자동으로 생성됩니다.</p>
-    `,
-  },
-  'github-pages-deploy': {
-    title: 'GitHub Pages 배포 가이드',
-    date: '2024-01-25',
-    content: `
-      <p>GitHub Pages를 사용하여 Next.js 블로그를 배포하는 방법을 설명합니다.</p>
-      <h2>배포 단계</h2>
-      <ol>
-        <li>GitHub에 레포지토리 생성</li>
-        <li>Next.js 프로젝트를 정적 사이트로 빌드</li>
-        <li>gh-pages 패키지를 사용하여 배포</li>
-        <li>GitHub Pages 설정에서 브랜치 선택</li>
-      </ol>
-      <h2>주의사항</h2>
-      <p>GitHub Pages는 정적 사이트만 호스팅할 수 있으므로, Next.js의 <code>output: 'export'</code> 옵션을 사용해야 합니다.</p>
-      <p>또한 basePath와 assetPrefix를 설정하여 올바른 경로로 리소스를 제공해야 합니다.</p>
-    `,
-  },
+}
+
+export function generateStaticParams() {
+  return Object.keys(posts).map((slug) => ({
+    slug,
+  }))
 }
 
 export default function PostPage({ params }: { params: { slug: string } }) {

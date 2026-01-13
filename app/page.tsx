@@ -8,20 +8,6 @@ const posts = [
     excerpt: '이것은 첫 번째 블로그 포스트입니다. Next.js와 GitHub Pages를 사용하여 만든 블로그입니다.',
     slug: 'first-post',
   },
-  {
-    id: 2,
-    title: 'Next.js로 블로그 만들기',
-    date: '2024-01-20',
-    excerpt: 'Next.js를 사용하여 정적 블로그를 만드는 방법에 대해 알아봅시다.',
-    slug: 'nextjs-blog',
-  },
-  {
-    id: 3,
-    title: 'GitHub Pages 배포 가이드',
-    date: '2024-01-25',
-    excerpt: 'GitHub Pages를 사용하여 Next.js 블로그를 배포하는 방법을 설명합니다.',
-    slug: 'github-pages-deploy',
-  },
 ]
 
 export default function Home() {
