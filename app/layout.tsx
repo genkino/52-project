@@ -13,6 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <head>
+        <link rel="alternate" type="application/rss+xml" title="52 Project RSS Feed" href="/52-project/feed.xml" />
+      </head>
       <body>{children}</body>
     </html>
   )
