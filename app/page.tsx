@@ -43,7 +43,7 @@ export default function Home() {
         </main>
 
         <footer className="mt-8 text-center text-sm text-[#666] border-t border-[#e8e8e8] pt-6">
-          <p>© 2024 52 Project. Built with Next.js and deployed on GitHub Pages.</p>
+          <p>© 2026 52 Project. Built with Next.js and deployed on GitHub Pages.</p>
         </footer>
       </div>
     </div>
