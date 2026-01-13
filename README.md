@@ -26,53 +26,6 @@ npm run build
 
 빌드된 파일은 `out` 폴더에 생성됩니다.
 
-## GitHub Pages에 배포하기
-
-### 1. GitHub 레포지토리 생성
-
-1. GitHub에서 새 레포지토리를 생성합니다.
-2. 레포지토리 이름을 `genkino-blog`로 설정합니다 (또는 원하는 이름으로).
-
-### 2. 프로젝트 설정
-
-`next.config.js`에서 `basePath`와 `assetPrefix`를 레포지토리 이름에 맞게 수정하세요:
-
-```javascript
-basePath: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
-assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
-```
-
-### 3. GitHub에 푸시
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/your-username/genkino-blog.git
-git push -u origin main
-```
-
-### 4. 배포
-
-```bash
-npm run deploy
-```
-
-이 명령은 자동으로:
-- 프로젝트를 빌드합니다
-- `out` 폴더에 `.nojekyll` 파일을 생성합니다
-- `gh-pages` 브랜치에 배포합니다
-
-### 5. GitHub Pages 활성화
-
-1. GitHub 레포지토리로 이동
-2. Settings > Pages
-3. Source를 `gh-pages` 브랜치로 설정
-4. Save
-
-몇 분 후 `https://your-username.github.io/genkino-blog`에서 블로그를 확인할 수 있습니다!
-
 ## 블로그 포스트 작성하기
 
 이제 블로그 포스트를 작성하는 것이 훨씬 쉬워졌습니다! 
@@ -85,7 +38,7 @@ npm run deploy
 ```markdown
 ---
 title: 포스트 제목
-date: 2024-01-20
+date: 2026-01-20
 excerpt: 포스트 요약 (선택사항)
 ---
 
@@ -108,7 +61,7 @@ excerpt: 포스트 요약 (선택사항)
 ```markdown
 ---
 title: Hello World
-date: 2024-01-20
+date: 2026-01-20
 excerpt: 첫 번째 포스트입니다.
 ---
 
@@ -120,6 +73,28 @@ excerpt: 첫 번째 포스트입니다.
 ```
 
 이제 `npm run dev`로 로컬에서 확인하거나, `npm run deploy`로 배포하면 됩니다!
+
+## GitHub Pages에 배포하기
+
+### 배포
+
+```bash
+npm run deploy
+```
+
+이 명령은 자동으로:
+- 프로젝트를 빌드합니다
+- `out` 폴더에 `.nojekyll` 파일을 생성합니다
+- `gh-pages` 브랜치에 배포합니다
+
+### GitHub Pages 활성화
+
+1. GitHub 레포지토리로 이동: https://github.com/genkino/52-project
+2. Settings > Pages
+3. Source를 `gh-pages` 브랜치로 설정
+4. Save
+
+몇 분 후 `https://genkino.github.io/52-project`에서 블로그를 확인할 수 있습니다!
 
 ## 기술 스택
 
