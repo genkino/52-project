@@ -1,14 +1,7 @@
 import Link from 'next/link'
+import { getAllPosts } from '@/lib/posts'
 
-const posts = [
-  {
-    id: 1,
-    title: '첫 번째 블로그 포스트',
-    date: '2024-01-15',
-    excerpt: '이것은 첫 번째 블로그 포스트입니다. Next.js와 GitHub Pages를 사용하여 만든 블로그입니다.',
-    slug: 'first-post',
-  },
-]
+const posts = getAllPosts()
 
 export default function Home() {
   return (
