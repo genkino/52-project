@@ -34,25 +34,30 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-[#fafafa]">
+      <div className="max-w-64rem mx-auto px-4 py-8 md:py-12">
         <Link
           href="/"
-          className="inline-block mb-8 text-blue-600 dark:text-blue-400 hover:underline"
+          className="inline-block mb-6 text-[#159957] hover:text-[#0d7a3d] hover:underline"
         >
           ← 홈으로 돌아가기
         </Link>
 
-        <article className="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-          <header className="mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <article className="bg-white rounded border border-[#e8e8e8] p-6 md:p-8">
+          <header className="mb-6 border-b border-[#e8e8e8] pb-4">
+            <h1 className="text-4xl font-semibold mb-2 text-[#159957]">
               {post.title}
             </h1>
-            <p className="text-gray-500 dark:text-gray-400">{post.date}</p>
+            <p className="text-sm text-[#666]">{post.date}</p>
           </header>
 
           <div
-            className="prose prose-lg dark:prose-invert max-w-none"
+            className="prose prose-lg max-w-none text-[#333]"
+            style={{
+              '--tw-prose-headings': '#333',
+              '--tw-prose-links': '#159957',
+              '--tw-prose-bold': '#333',
+            } as React.CSSProperties}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

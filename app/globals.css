@@ -3,21 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --cayman-bg: #fafafa;
+  --cayman-text: #333;
+  --cayman-link: #159957;
+  --cayman-link-hover: #0d7a3d;
+  --cayman-border: #e8e8e8;
+  --cayman-header-bg: #159957;
+  --cayman-header-text: #fff;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--cayman-text);
+  background: var(--cayman-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  color: var(--cayman-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cayman-link-hover);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 2em;
+  border-bottom: 1px solid var(--cayman-border);
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--cayman-border);
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 1.25em;
 }
 
 @layer utilities {
