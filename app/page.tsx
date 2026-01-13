@@ -19,7 +19,7 @@ export default function Home() {
             52 Project
           </h1>
           <p className="text-lg text-[#666]">
-            Next.js와 GitHub Pages로 만든 블로그
+            52's project blog
           </p>
         </header>
 
