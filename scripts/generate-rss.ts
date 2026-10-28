@@ -1,19 +1,22 @@
-import fs from 'fs'
-import path from 'path'
-import { generateRSSFeed } from '../lib/rss'
+import fs from 'node:fs'
+import path from 'node:path'
+import { generateAllRSSFeeds } from '../lib/rss'
+import { getPostStaticParams } from '../lib/posts'
 
-async function main() {
-  const rss = await generateRSSFeed()
-  const outputPath = path.join(process.cwd(), 'out', 'feed.xml')
-  
-  // out 폴더가 없으면 생성
-  const outDir = path.join(process.cwd(), 'out')
-  if (!fs.existsSync(outDir)) {
-    fs.mkdirSync(outDir, { recursive: true })
-  }
-  
-  fs.writeFileSync(outputPath, rss, 'utf-8')
-  console.log('RSS feed generated at:', outputPath)
+const outputRoot = path.join(process.cwd(), 'out')
+
+if (getPostStaticParams().length === 0) {
+  // The reserved Next.js export placeholder is only for build-time compatibility.
+  fs.rmSync(path.join(outputRoot, 'ko', 'gatherly', '_no-approved-posts'), {
+    recursive: true,
+    force: true,
+  })
 }
 
-main().catch(console.error)
+for (const { locale, xml } of generateAllRSSFeeds()) {
+  const localeDirectory = path.join(outputRoot, locale)
+  fs.mkdirSync(localeDirectory, { recursive: true })
+  const outputPath = path.join(localeDirectory, 'feed.xml')
+  fs.writeFileSync(outputPath, xml, 'utf8')
+  console.log(`RSS feed generated: ${outputPath}`)
+}
