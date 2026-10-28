@@ -1,5 +1,5 @@
 const configuredSiteUrl = new URL(
-  process.env.BLOG_SITE_URL || 'https://genkino.github.io/52-project',
+  process.env.BLOG_SITE_URL || 'https://blog.52proj.com',
 )
 const canonicalBasePath = configuredSiteUrl.pathname.replace(/\/+$/, '')
 

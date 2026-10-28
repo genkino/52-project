@@ -40,13 +40,13 @@ test('language feeds include only approved posts in their language', () => {
   const japaneseFeed = generateRSSFeed('ja', fixtureDirectory)
 
   assert.match(koreanFeed, /Synthetic approved note/)
-  assert.match(koreanFeed, /https:\/\/genkino\.github\.io\/52-project\/ko\/gatherly\/approved-example\//)
+  assert.match(koreanFeed, /https:\/\/blog\.52proj\.com\/ko\/gatherly\/approved-example\//)
   assert.doesNotMatch(koreanFeed, /Synthetic English note|Synthetic Japanese note|Synthetic draft note|Synthetic unapproved note/)
   assert.match(englishFeed, /Synthetic English note/)
-  assert.match(englishFeed, /https:\/\/genkino\.github\.io\/52-project\/en\/zupzup\/approved-example\//)
+  assert.match(englishFeed, /https:\/\/blog\.52proj\.com\/en\/zupzup\/approved-example\//)
   assert.doesNotMatch(englishFeed, /Synthetic approved note|Synthetic Japanese note|Synthetic draft note/)
   assert.match(japaneseFeed, /Synthetic Japanese note/)
-  assert.match(japaneseFeed, /https:\/\/genkino\.github\.io\/52-project\/ja\/gatherly\/approved-example\//)
+  assert.match(japaneseFeed, /https:\/\/blog\.52proj\.com\/ja\/gatherly\/approved-example\//)
   assert.doesNotMatch(japaneseFeed, /Synthetic approved note|Synthetic English note|Synthetic unapproved note/)
 })
 
@@ -57,11 +57,18 @@ test('RSS generation creates one feed for each supported locale', () => {
   assert.ok(feeds.every(({ xml }) => xml.includes('<rss')))
 })
 
-test('only the two approved Korean articles are published; the old root test post stays excluded', () => {
+test('all six approved localized articles are published; the old root test post stays excluded', () => {
   const posts = getAllPosts()
+  assert.equal(posts.length, 6)
   assert.deepEqual(
-    posts.map(({ locale, product, slug }) => ({ locale, product, slug })),
+    posts
+      .map(({ locale, product, slug }) => ({ locale, product, slug }))
+      .sort((left, right) => left.locale.localeCompare(right.locale) || left.product.localeCompare(right.product)),
     [
+      { locale: 'en', product: 'gatherly', slug: 'gatherly-first-read' },
+      { locale: 'en', product: 'zupzup', slug: 'zupzup-first-save' },
+      { locale: 'ja', product: 'gatherly', slug: 'gatherly-first-read' },
+      { locale: 'ja', product: 'zupzup', slug: 'zupzup-first-save' },
       { locale: 'ko', product: 'gatherly', slug: 'gatherly-first-read' },
       { locale: 'ko', product: 'zupzup', slug: 'zupzup-first-save' },
     ],
@@ -75,8 +82,11 @@ test('only the two approved Korean articles are published; the old root test pos
   const feeds = generateAllRSSFeeds()
   assert.deepEqual(feeds.map(({ locale }) => locale), ['ko', 'en', 'ja'])
   assert.ok(feeds.every(({ xml }) => !xml.includes('first-post')))
-  assert.match(feeds[0].xml, /Gatherly로 읽을 곳을 모으기|Gatherly/)
+  assert.deepEqual(feeds.map(({ xml }) => (xml.match(/<item>/g) ?? []).length), [2, 2, 2])
+  assert.match(feeds[0].xml, /Gatherly/)
   assert.match(feeds[0].xml, /ZupZup/)
-  assert.doesNotMatch(feeds[1].xml, /<item>/)
-  assert.doesNotMatch(feeds[2].xml, /<item>/)
+  assert.match(feeds[1].xml, /Read new blog posts in one place with Gatherly/)
+  assert.match(feeds[1].xml, /Save things with ZupZup and find them again/)
+  assert.match(feeds[2].xml, /Gatherlyでブログの新着記事をまとめて読む/)
+  assert.match(feeds[2].xml, /ZupZupで保存した資料をあとから見つける/)
 })

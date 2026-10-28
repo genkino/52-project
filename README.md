@@ -31,6 +31,18 @@ status: approved
 
 Supported locales are `ko`, `en`, and `ja`; supported products are `gatherly` and `zupzup`.
 
-## Static hosting preparation
+## Production deployment
 
-The existing GitHub Pages project site is `https://genkino.github.io/52-project/`. Build it with `npm run build:github-pages`; the command sets the `/52-project` base path and writes static files to `out/`. The canonical URL defaults to the GitHub Pages address and can be overridden with `BLOG_SITE_URL`. For local development, use `npm run dev` or `npm run build` without a base path. The custom domain `blog.52proj.com` is not configured by this repository.
+The public site is served from Cloudflare Pages at `https://blog.52proj.com`. The repository's `Deploy blog to Cloudflare Pages` GitHub Actions workflow is manual-only: choose **Run workflow** on the `main` branch. It runs `npm ci`, the article approval tests, and a static build before deploying `out/` to the existing `52project-blog` Pages project. The production GitHub environment supplies the non-secret `CLOUDFLARE_ACCOUNT_ID` variable and the `CLOUDFLARE_API_TOKEN` secret. The secret is passed only to the final deployment step.
+
+The earlier GitHub Pages build command remains available for the legacy Pages copy. The production workflow does not set a base path and uses `BLOG_SITE_URL=https://blog.52proj.com` for canonical URLs and RSS links.
+
+### Triggering from 52web Codex cloud
+
+When a 52web Codex task has access to `genkino/52-project` and permission to run its GitHub Actions workflows, it can request the same manual deployment with the existing GitHub CLI authentication:
+
+```bash
+gh workflow run deploy-pages.yml --repo genkino/52-project --ref main
+```
+
+This only dispatches the workflow; Cloudflare credentials remain in the `production` environment and are never copied into the Codex environment. The registered 52web repository and its GitHub permissions must include `genkino/52-project` for this command to work. Do not add a repository or broaden permissions without approval.
