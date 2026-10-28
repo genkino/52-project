@@ -42,3 +42,50 @@ jobs:
           def call_api(path):
               connection = http.client.HTTPSConnection("api.cloudflare.com", timeout=30)
               try:
+                  connection.request("GET", path, headers={"Authorization": "Bearer " + token, "Accept": "application/json"})
+                  response = connection.getresponse()
+                  return response.status, response.read()
+              except Exception:
+                  return 0, b""
+              finally:
+                  connection.close()
+          def parse_response(body):
+              try:
+                  return json.loads(body)
+              except Exception:
+                  return {}
+          def emit_error_codes(prefix, document):
+              errors = document.get("errors")
+              if not isinstance(errors, list):
+                  return
+              for error in errors:
+                  if isinstance(error, dict):
+                      code = error.get("code")
+                      if isinstance(code, int) and not isinstance(code, bool):
+                          print(f"{prefix}_error_code={code}")
+          verify_path = f"/client/v4/accounts/{account_id}/tokens/verify"
+          verify_http, verify_body = call_api(verify_path)
+          print(f"account_verify_http_status={verify_http:03d}")
+          verify_document = parse_response(verify_body)
+          result = verify_document.get("result")
+          if verify_http != 200 or verify_document.get("success") is not True or not isinstance(result, dict):
+              emit_error_codes("account_verify", verify_document)
+              sys.exit(1)
+          token_status = result.get("status")
+          if token_status not in {"active", "disabled", "expired"}:
+              token_status = "unknown"
+          print(f"status={token_status}")
+          for field in ("expires_on", "not_before"):
+              value = result.get(field)
+              if not isinstance(value, str) or len(value) > 40 or any(ord(c) < 32 for c in value):
+                  value = "unset"
+              print(f"{field}={value}")
+          if token_status != "active":
+              sys.exit(1)
+          pages_path = f"/client/v4/accounts/{account_id}/pages/projects/52project-blog"
+          pages_http, pages_body = call_api(pages_path)
+          print(f"pages_project_http_status={pages_http:03d}")
+          if pages_http != 200:
+              emit_error_codes("pages_project", parse_response(pages_body))
+              sys.exit(1)
+          PY
