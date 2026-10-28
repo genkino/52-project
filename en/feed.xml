@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[오이공작소 · English]]></title>
+        <description><![CDATA[Notes from making and improving small products.]]></description>
+        <link>https://genkino.github.io/52-project/en/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 28 Oct 2026 00:29:12 GMT</lastBuildDate>
+        <atom:link href="https://genkino.github.io/52-project/en/feed.xml" rel="self" type="application/rss+xml"/>
+        <language><![CDATA[en]]></language>
+    </channel>
+</rss>
