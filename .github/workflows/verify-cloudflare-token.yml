@@ -27,6 +27,7 @@ jobs:
           import sys
           account_id = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "")
           token = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+          token = token.replace("\r", "").replace("\n", "")
           if re.fullmatch(r"[0-9a-fA-F]{32}", account_id) is None:
               print("account_verify_http_status=000")
               print("preflight_error_code=1")
