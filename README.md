@@ -33,7 +33,7 @@ Supported locales are `ko`, `en`, and `ja`; supported products are `gatherly` an
 
 ## Production deployment
 
-The public site is served from Cloudflare Pages at `https://blog.52proj.com`. The repository's `Deploy blog to Cloudflare Pages` GitHub Actions workflow is manual-only: choose **Run workflow** on the `main` branch. It runs `npm ci`, the article approval tests, and a static build before deploying `out/` to the existing `52project-blog` Pages project. The production GitHub environment supplies the non-secret `CLOUDFLARE_ACCOUNT_ID` variable and the `CLOUDFLARE_API_TOKEN` secret. The secret is passed only to the final deployment step.
+The public site is served from Cloudflare Pages at `https://blog.52proj.com`. The repository's `Deploy blog to Cloudflare Pages` GitHub Actions workflow is manual-only: choose **Run workflow** on the `main` branch. It runs `npm ci`, the article approval tests, and a static build before deploying `out/` to the existing `52project-blog` Pages project. The production GitHub environment supplies the non-secret `CLOUDFLARE_ACCOUNT_ID` variable and the `CLOUDFLARE_API_TOKEN` secret. The secret is injected only into the final deployment step, not into tests or the build.
 
 The earlier GitHub Pages build command remains available for the legacy Pages copy. The production workflow does not set a base path and uses `BLOG_SITE_URL=https://blog.52proj.com` for canonical URLs and RSS links.
 
