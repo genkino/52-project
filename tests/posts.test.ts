@@ -57,9 +57,9 @@ test('RSS generation creates one feed for each supported locale', () => {
   assert.ok(feeds.every(({ xml }) => xml.includes('<rss')))
 })
 
-test('all six approved localized articles are published; the old root test post stays excluded', () => {
+test('all seven approved localized articles are published; the old root test post stays excluded', () => {
   const posts = getAllPosts()
-  assert.equal(posts.length, 6)
+  assert.equal(posts.length, 7)
   assert.deepEqual(
     posts
       .map(({ locale, product, slug }) => ({ locale, product, slug }))
@@ -69,6 +69,7 @@ test('all six approved localized articles are published; the old root test post 
       { locale: 'en', product: 'zupzup', slug: 'zupzup-first-save' },
       { locale: 'ja', product: 'gatherly', slug: 'gatherly-first-read' },
       { locale: 'ja', product: 'zupzup', slug: 'zupzup-first-save' },
+      { locale: 'ko', product: 'gatherly', slug: 'save-for-later-and-organize' },
       { locale: 'ko', product: 'gatherly', slug: 'gatherly-first-read' },
       { locale: 'ko', product: 'zupzup', slug: 'zupzup-first-save' },
     ],
@@ -82,8 +83,9 @@ test('all six approved localized articles are published; the old root test post 
   const feeds = generateAllRSSFeeds()
   assert.deepEqual(feeds.map(({ locale }) => locale), ['ko', 'en', 'ja'])
   assert.ok(feeds.every(({ xml }) => !xml.includes('first-post')))
-  assert.deepEqual(feeds.map(({ xml }) => (xml.match(/<item>/g) ?? []).length), [2, 2, 2])
+  assert.deepEqual(feeds.map(({ xml }) => (xml.match(/<item>/g) ?? []).length), [3, 2, 2])
   assert.match(feeds[0].xml, /Gatherly/)
+  assert.match(feeds[0].xml, /읽고 끝내기 아까운 글을 보관하는 두 가지 방법/)
   assert.match(feeds[0].xml, /ZupZup/)
   assert.match(feeds[1].xml, /Read new blog posts in one place with Gatherly/)
   assert.match(feeds[1].xml, /Save things with ZupZup and find them again/)
