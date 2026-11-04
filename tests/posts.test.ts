@@ -57,20 +57,25 @@ test('RSS generation creates one feed for each supported locale', () => {
   assert.ok(feeds.every(({ xml }) => xml.includes('<rss')))
 })
 
-test('all seven approved localized articles are published; the old root test post stays excluded', () => {
+test('all twelve approved localized articles are published; the old root test post stays excluded', () => {
   const posts = getAllPosts()
-  assert.equal(posts.length, 7)
+  assert.equal(posts.length, 12)
   assert.deepEqual(
     posts
       .map(({ locale, product, slug }) => ({ locale, product, slug }))
       .sort((left, right) => left.locale.localeCompare(right.locale) || left.product.localeCompare(right.product)),
     [
+      { locale: 'en', product: 'gatherly', slug: 'save-for-later-and-organize' },
       { locale: 'en', product: 'gatherly', slug: 'gatherly-first-read' },
+      { locale: 'en', product: 'zupzup', slug: 'menu-ocr-and-meal-notes' },
       { locale: 'en', product: 'zupzup', slug: 'zupzup-first-save' },
+      { locale: 'ja', product: 'gatherly', slug: 'save-for-later-and-organize' },
       { locale: 'ja', product: 'gatherly', slug: 'gatherly-first-read' },
+      { locale: 'ja', product: 'zupzup', slug: 'menu-ocr-and-meal-notes' },
       { locale: 'ja', product: 'zupzup', slug: 'zupzup-first-save' },
       { locale: 'ko', product: 'gatherly', slug: 'save-for-later-and-organize' },
       { locale: 'ko', product: 'gatherly', slug: 'gatherly-first-read' },
+      { locale: 'ko', product: 'zupzup', slug: 'menu-ocr-and-meal-notes' },
       { locale: 'ko', product: 'zupzup', slug: 'zupzup-first-save' },
     ],
   )
