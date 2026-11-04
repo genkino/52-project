@@ -123,6 +123,16 @@ export function getPostBySlug(
   return parsePostMarkdown(source, { locale, product, slug })
 }
 
+export function getPostLocaleParams(
+  product: Product,
+  slug: string,
+  postsDirectory = defaultPostsDirectory,
+): PostStaticParam[] {
+  return LOCALES
+    .filter((locale) => getPostBySlug(locale, product, slug, postsDirectory) !== null)
+    .map((locale) => ({ locale, product, slug }))
+}
+
 export function getPostStaticParams(
   postsDirectory = defaultPostsDirectory,
 ): PostStaticParam[] {

@@ -1,8 +1,15 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { DATE_LOCALES, PAGE_COPY, PRODUCT_LABELS } from '@/lib/copy'
-import { getPostBySlug, getPostStaticParams, isLocale, isProduct, renderPostBody } from '@/lib/posts'
+import { DATE_LOCALES, LOCALE_LABELS, PAGE_COPY, PRODUCT_LABELS } from '@/lib/copy'
+import {
+  getPostBySlug,
+  getPostLocaleParams,
+  getPostStaticParams,
+  isLocale,
+  isProduct,
+  renderPostBody,
+} from '@/lib/posts'
 import { SITE_URL, sitePath } from '@/lib/site'
 
 export const dynamicParams = false
@@ -43,6 +50,7 @@ export default async function ArticlePage({
   if (!post) notFound()
 
   const copy = PAGE_COPY[post.locale]
+  const localeParams = getPostLocaleParams(post.product, post.slug)
   const publishedDate = new Date(`${post.date}T00:00:00.000Z`).toLocaleDateString(DATE_LOCALES[post.locale], {
     year: 'numeric',
     month: 'long',
@@ -60,9 +68,25 @@ export default async function ArticlePage({
             <small>{copy.eyebrow}</small>
           </span>
         </Link>
-        <a className="rss-link" href={sitePath(`/${post.locale}/feed.xml`)}>
-          <span aria-hidden="true">◔</span> {copy.rssLabel}
-        </a>
+        <div className="header-actions">
+          {localeParams.length > 1 ? (
+            <nav className="language-nav" aria-label={copy.languageLabel}>
+              {localeParams.map(({ locale: targetLocale }) => (
+                <Link
+                  aria-current={targetLocale === post.locale ? 'page' : undefined}
+                  aria-label={LOCALE_LABELS[targetLocale]}
+                  href={`/${targetLocale}/${post.product}/${post.slug}/`}
+                  key={targetLocale}
+                >
+                  {targetLocale.toUpperCase()}
+                </Link>
+              ))}
+            </nav>
+          ) : null}
+          <a className="rss-link" href={sitePath(`/${post.locale}/feed.xml`)}>
+            <span aria-hidden="true">◔</span> {copy.rssLabel}
+          </a>
+        </div>
       </header>
 
       <article className="article-card">

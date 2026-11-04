@@ -2,9 +2,28 @@ import assert from 'node:assert/strict'
 import path from 'node:path'
 import test from 'node:test'
 import { generateAllRSSFeeds, generateRSSFeed } from '../lib/rss'
-import { LOCALES, PRODUCTS, getAllPosts, getPostBySlug, getPostStaticParams } from '../lib/posts'
+import {
+  LOCALES,
+  PRODUCTS,
+  getAllPosts,
+  getPostBySlug,
+  getPostLocaleParams,
+  getPostStaticParams,
+} from '../lib/posts'
 
 const fixtureDirectory = path.join(process.cwd(), 'tests', 'fixtures', 'posts')
+
+test('article locale routes include only approved translations for the same product and slug', () => {
+  assert.deepEqual(getPostLocaleParams('gatherly', 'approved-example', fixtureDirectory), [
+    { locale: 'ko', product: 'gatherly', slug: 'approved-example' },
+    { locale: 'ja', product: 'gatherly', slug: 'approved-example' },
+  ])
+  assert.deepEqual(getPostLocaleParams('zupzup', 'approved-example', fixtureDirectory), [
+    { locale: 'en', product: 'zupzup', slug: 'approved-example' },
+  ])
+  assert.deepEqual(getPostLocaleParams('zupzup', 'draft-example', fixtureDirectory), [])
+  assert.deepEqual(getPostLocaleParams('gatherly', 'missing-status', fixtureDirectory), [])
+})
 
 test('only explicitly approved, complete posts enter public routes', () => {
   const posts = getAllPosts(fixtureDirectory)
