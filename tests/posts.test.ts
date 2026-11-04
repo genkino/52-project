@@ -88,7 +88,7 @@ test('all twelve approved localized articles are published; the old root test po
   const feeds = generateAllRSSFeeds()
   assert.deepEqual(feeds.map(({ locale }) => locale), ['ko', 'en', 'ja'])
   assert.ok(feeds.every(({ xml }) => !xml.includes('first-post')))
-  assert.deepEqual(feeds.map(({ xml }) => (xml.match(/<item>/g) ?? []).length), [3, 2, 2])
+  assert.deepEqual(feeds.map(({ xml }) => (xml.match(/<item>/g) ?? []).length), [4, 4, 4])
   assert.match(feeds[0].xml, /Gatherly/)
   assert.match(feeds[0].xml, /읽고 끝내기 아까운 글을 보관하는 두 가지 방법/)
   assert.match(feeds[0].xml, /ZupZup/)
