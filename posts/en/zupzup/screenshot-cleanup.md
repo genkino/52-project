@@ -71,6 +71,12 @@ A photo marked only Delete will not leave a copy in ZupZup. If you use iCloud Ph
 
 *Check which originals will be deleted after saving and which will be deleted without saving.*
 
+After deleting originals, you can check Photos’ Recently Deleted album. Deleted photos normally stay there for 30 days, during which you can recover the ones you need. A copy saved in ZupZup is separate from Photos’ Recently Deleted album.
+
+If you permanently delete a photo from Recently Deleted or its retention period has passed, you cannot recover it there. There is also an exception when you exceed your iCloud storage limit: deleted photos may be removed immediately and be unavailable for recovery. Keep a separate copy of important originals before deleting them.
+
+[Apple’s deleted-photo recovery guide](https://support.apple.com/en-us/124460) · [iCloud storage guide](https://support.apple.com/en-us/108922)
+
 ## You can finish another day
 
 Choose Continue Later when you want to pause. Return to Continue Cleanup to review the remaining photos. The cleanup session is stored only on this device and does not sync to other devices.
