@@ -76,9 +76,9 @@ test('RSS generation creates one feed for each supported locale', () => {
   assert.ok(feeds.every(({ xml }) => xml.includes('<rss')))
 })
 
-test('all twenty-one approved localized articles are published; the old root test post stays excluded', () => {
+test('all twenty-four approved localized articles are published; the old root test post stays excluded', () => {
   const posts = getAllPosts()
-  assert.equal(posts.length, 21)
+  assert.equal(posts.length, 24)
   assert.deepEqual(
     posts
       .map(({ locale, product, slug }) => ({ locale, product, slug }))
@@ -86,6 +86,7 @@ test('all twenty-one approved localized articles are published; the old root tes
     [
       { locale: 'en', product: 'gatherly', slug: 'gatherly-first-read' },
       { locale: 'en', product: 'gatherly', slug: 'save-for-later-and-organize' },
+      { locale: 'en', product: 'zupzup', slug: 'document-scan-and-organize' },
       { locale: 'en', product: 'zupzup', slug: 'menu-ocr-and-meal-notes' },
       { locale: 'en', product: 'zupzup', slug: 'save-web-link-and-fetch-content' },
       { locale: 'en', product: 'zupzup', slug: 'screenshot-cleanup' },
@@ -93,6 +94,7 @@ test('all twenty-one approved localized articles are published; the old root tes
       { locale: 'en', product: 'zupzup', slug: 'zupzup-first-save' },
       { locale: 'ja', product: 'gatherly', slug: 'gatherly-first-read' },
       { locale: 'ja', product: 'gatherly', slug: 'save-for-later-and-organize' },
+      { locale: 'ja', product: 'zupzup', slug: 'document-scan-and-organize' },
       { locale: 'ja', product: 'zupzup', slug: 'menu-ocr-and-meal-notes' },
       { locale: 'ja', product: 'zupzup', slug: 'save-web-link-and-fetch-content' },
       { locale: 'ja', product: 'zupzup', slug: 'screenshot-cleanup' },
@@ -100,6 +102,7 @@ test('all twenty-one approved localized articles are published; the old root tes
       { locale: 'ja', product: 'zupzup', slug: 'zupzup-first-save' },
       { locale: 'ko', product: 'gatherly', slug: 'gatherly-first-read' },
       { locale: 'ko', product: 'gatherly', slug: 'save-for-later-and-organize' },
+      { locale: 'ko', product: 'zupzup', slug: 'document-scan-and-organize' },
       { locale: 'ko', product: 'zupzup', slug: 'menu-ocr-and-meal-notes' },
       { locale: 'ko', product: 'zupzup', slug: 'save-web-link-and-fetch-content' },
       { locale: 'ko', product: 'zupzup', slug: 'screenshot-cleanup' },
@@ -116,7 +119,7 @@ test('all twenty-one approved localized articles are published; the old root tes
   const feeds = generateAllRSSFeeds()
   assert.deepEqual(feeds.map(({ locale }) => locale), ['ko', 'en', 'ja'])
   assert.ok(feeds.every(({ xml }) => !xml.includes('first-post')))
-  assert.deepEqual(feeds.map(({ xml }) => (xml.match(/<item>/g) ?? []).length), [7, 7, 7])
+  assert.deepEqual(feeds.map(({ xml }) => (xml.match(/<item>/g) ?? []).length), [8, 8, 8])
   assert.match(feeds[0].xml, /Gatherly/)
   assert.match(feeds[0].xml, /읽고 끝내기 아까운 글을 보관하는 두 가지 방법/)
   assert.match(feeds[0].xml, /ZupZup/)
