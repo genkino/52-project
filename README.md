@@ -46,3 +46,13 @@ gh workflow run deploy-pages.yml --repo genkino/52-project --ref main
 ```
 
 This only dispatches the workflow; Cloudflare credentials remain in the `production` environment and are never copied into the Codex environment. The registered 52web repository and its GitHub permissions must include `genkino/52-project` for this command to work. Do not add a repository or broaden permissions without approval.
+
+## Article media
+
+Use normal Markdown images for reviewed screenshots. A standalone Markdown link
+with plain-text description to `/media/zupzup-guides/{cleanup,image,web}/name.mp4`
+is rendered as a native video player with controls, inline playback, metadata-only
+preloading, an accessible label, and a fallback link. Place a localized caption
+in the next paragraph. Clips do not autoplay. Raw HTML remains sanitized; remote
+video URLs and other paths remain ordinary links. Only approved publication
+assets belong in `public/`; keep source packages and review notes outside it.

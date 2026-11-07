@@ -132,6 +132,19 @@ a:focus-visible { outline: 3px solid var(--rust); outline-offset: 4px; }
 .article-content p { margin: 0 0 20px; }
 .article-content a { color: var(--rust); text-decoration: underline; text-underline-offset: 3px; }
 .article-content ul, .article-content ol { padding-left: 24px; }
+.article-content { overflow-wrap: anywhere; }
+.article-content img[src^="/media/zupzup-guides/"], .article-video video {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  margin: 24px auto 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.article-video { margin: 24px 0 12px; }
+.article-video video { background: #101713; }
+.article-content p > em:only-child { display: block; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
 
 .landing-shell { display: flex; min-height: 100vh; flex-direction: column; justify-content: space-between; padding: 28px 0 20px; }
 .landing-topline { gap: 11px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .15em; }
