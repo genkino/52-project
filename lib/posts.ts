@@ -144,5 +144,15 @@ export function getPostStaticParams(
 }
 
 export function renderPostBody(markdown: string): string {
-  return remark().use(html).processSync(markdown).toString()
+  const sanitized = remark().use(html).processSync(markdown).toString()
+
+  // Only a standalone, sanitized link to a locally hosted guide clip becomes
+  // a player. Raw HTML stays disabled, and external URLs remain ordinary links.
+  return sanitized.replace(
+    /<p><a href="(\/media\/zupzup-guides\/(?:cleanup|image|web)\/[a-z0-9-]+\.mp4)">([^<\n]+)<\/a><\/p>/g,
+    (_match, source: string, description: string) => {
+      const label = description.replace(/"/g, '&quot;').replace(/'/g, '&#39;')
+      return `<figure class="article-video"><video controls playsinline preload="metadata" src="${source}" aria-label="${label}"><a href="${source}">${description}</a></video></figure>`
+    },
+  )
 }
