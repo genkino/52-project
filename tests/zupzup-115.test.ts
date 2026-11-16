@@ -11,19 +11,20 @@ test('ZupZup 1.15 guides are approved in all locales, linked with refreshed medi
       assert.equal(post.date, slug === 'summarize-in-another-language' ? '2026-11-17' : '2026-11-07')
       const html = renderPostBody(post.body)
       assert.match(html, /ZupZup 1\.15/)
+      assert.match(html, /saved-body-scroll-v115\.mp4/)
       if (slug === 'save-web-link-and-fetch-content') {
         assert.match(html, /save-and-fetch-v115\.mp4/)
         assert.match(html, /english-summary-suggestion-v115\.mp4/)
         assert.doesNotMatch(html, /summary-to-result-v115\.mp4|initial-english-summary/)
       } else {
-        assert.match(html, /english-source-to-korean-summary-v115\.mp4/)
+        assert.match(html, /english-source-to-korean-summary-full-menu-v115\.mp4/)
         assert.match(html, /english-source-preview-v115\.png/)
         assert.match(html, /summary-result-ko-v115\.png/)
         assert.doesNotMatch(html, /save-and-fetch-v115\.mp4|initial-english-summary/)
       }
       assert.doesNotMatch(html, /<iframe|\/Users\/|libfile_|status: draft/)
       if (slug === 'summarize-in-another-language') {
-        assert.equal((html.match(/<video /g) ?? []).length, 1)
+        assert.equal((html.match(/<video /g) ?? []).length, 2)
         assert.equal((html.match(/<img /g) ?? []).length, 4)
       }
       assert.match(html, /apps.apple.com\/app\/id6758145905/)
