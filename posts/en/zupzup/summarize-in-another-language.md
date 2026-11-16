@@ -5,25 +5,12 @@ excerpt: "Choose a summary language for a saved article and add the result to yo
 status: approved
 ---
 
-Updated on November 17, 2026 with ZupZup 1.15 screens. These silent excerpts crop only app controls from the November 15 recording. Full article text, images, and the personal library are excluded. The clips do not show the full processing duration.
+ZupZup 1.15
 
-This guide describes the workflow checked in ZupZup 1.15.
+Start with an item that already contains saved English text. The user explicitly selects Korean and requests a separate summary. This is different from the initial English summary suggested when the webpage was fetched.
 
-Sometimes you save an article in another language but do not have time to read it in full. If you want an overview in a familiar language before deciding what to read closely, try selecting a summary language in ZupZup.
+## Separate step: the result after explicitly choosing Korean
 
-## From saving a link to seeing the fetched body
-
-The save form opened from Safari sharing shows the title and URL. The item detail then displays a webpage-body analysis status, followed by a saved-body link and Original Content. This recording shows the real state transition after saving, not a manual tap on a fetch command.
-
-[Save form → body analysis → saved body and Original Content](/media/zupzup-guides/web/save-and-fetch-v115.mp4)
-
-The app switch and personal library are omitted, preserving chronological order. This silent edit plays at half speed to make the state change readable; it does not represent actual processing time. Only the article title, source and the minimum interface needed for this explanation are shown.
-
-![Fetching the webpage body and images](/media/zupzup-guides/web/body-analysis-v115.png)
-
-![Saved body and Original Content available](/media/zupzup-guides/web/body-ready-v115.png)
-
-## From choosing a language to the summary result
 
 Follow the Korean-language selection, the processing state, and the confirmation that the Korean result was added to the note, all from the same recording. Waiting is shortened in this silent edit; the result is limited to its date, language and opening paragraph, with the final excerpt slowed for readability. This is not a full translation or a guarantee of summary accuracy.
 
@@ -42,7 +29,6 @@ The choices come from the app’s languages supported by the device’s model. C
 
 ![Summary language screen with Korean selected](/media/zupzup-guides/web/summary-language.png)
 
-[Summary language screen with Korean selected](/media/zupzup-guides/web/summary-language.mp4)
 
 ## See progress and cancel if needed
 
@@ -51,7 +37,6 @@ A summary progress card appears in the detail view, with a cancel action. This e
 
 ![Summary progress and Cancel control](/media/zupzup-guides/web/summary-progress.png)
 
-[Short excerpt of the summary processing state](/media/zupzup-guides/web/summary-progress.mp4)
 
 ## Keep the original and previous notes
 
