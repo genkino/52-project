@@ -23,6 +23,12 @@ The app switch and personal library are omitted, preserving chronological order.
 
 ![Saved body and Original Content available](/media/zupzup-guides/web/body-ready-v115.png)
 
+## From choosing a language to the summary result
+
+Follow the Korean-language selection, the processing state, and the confirmation that the Korean result was added to the note, all from the same recording. Waiting is shortened in this silent edit; each excerpt plays at its original speed. This is not a full translation or a guarantee of summary accuracy.
+
+[Language selection → summary processing → Korean result added to the note](/media/zupzup-guides/web/summary-to-result-v115.mp4)
+
 ## Check the saved body first
 
 Open Original Content before requesting a summary. This example, using the Korean interface, starts with paragraphs and images from an English article already present. A summary alone may not reveal that part of a page was never fetched, so check the saved content first.
