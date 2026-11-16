@@ -62,7 +62,8 @@ assets belong in `public/`; keep source packages and review notes outside it.
 The existing `Verify Cloudflare Pages token` workflow accepts the optional
 `check_home_worker` boolean (default: `false`). When enabled on `main`, it also
 checks the fixed `52project-home` Worker settings endpoint using the existing
-production secret. It prints only HTTP status, success and numeric error codes,
+production secret. The additional Worker check prints only HTTP status, success
+and numeric error codes,
 not credentials, account identifiers, response bodies or bindings. No Worker
 settings, permissions or deployments are changed. A successful read does **not**
 prove permission to deploy. The blog deployment workflow is unchanged.
