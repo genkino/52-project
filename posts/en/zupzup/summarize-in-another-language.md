@@ -7,14 +7,17 @@ status: approved
 
 ZupZup 1.15
 
-Start with an item that already contains saved English text. The user explicitly selects Korean and requests a separate summary. This is different from the initial English summary suggested when the webpage was fetched.
+Start with an item that already contains saved English text. The user confirms that Korean is selected and requests a separate summary. This is different from the initial English summary suggested when the webpage was fetched.
 
-## Separate step: the result after explicitly choosing Korean
+## English source → summarize in another language → Korean result
 
+The example source is The MIT Press Reader’s “From Linux to Wikipedia: How Volunteers Build the Internet,” an English article about peer production such as Linux and Wikipedia. The video first shows its title and short introduction, then the “summarize in another language” menu action, Korean selected in the language picker, and the summary action, followed by the Korean result added to the note.
 
-Follow the Korean-language selection, the processing state, and the confirmation that the Korean result was added to the note, all from the same recording. Waiting is shortened in this silent edit; the result is limited to its date, language and opening paragraph, with the final excerpt slowed for readability. This is not a full translation or a guarantee of summary accuracy.
+[Source title and introduction → summarize-in-another-language menu → Korean selection and action → result](/media/zupzup-guides/web/english-source-to-korean-summary-v115.mp4)
 
-[Language selection → summary processing → Korean result added to the note](/media/zupzup-guides/web/summary-to-result-v115.mp4)
+Only the source title and brief introduction are shown publicly, but the actual operation uses the body saved in the app. It is separate from the initial English organizing suggestion. The menu action is slowed for readability and waiting is shortened; the result is limited to its date, language and opening paragraph, slowed for readability. This is not a full translation or a guarantee of accuracy.
+
+![Title and brief introduction of the English source article](/media/zupzup-guides/web/english-source-preview-v115.png)
 
 ## Check the saved body first
 
@@ -22,7 +25,7 @@ Open Original Content before requesting a summary. This example, using the Korea
 
 ## Choose the language
 
-Open the action for summarizing in another language from the bottom menu. In this example, I selected Korean. This produces a shorter account of the saved body rather than translating the entire article.
+Open the action for summarizing in another language from the bottom menu. In this example, I confirmed that Korean was already selected and started the summary. This produces a shorter account of the saved body rather than translating the entire article.
 
 The choices come from the app’s languages supported by the device’s model. Check which options are available on your device rather than assuming every language is supported.
 
@@ -43,6 +46,17 @@ A summary progress card appears in the detail view, with a cancel action. This e
 When the summary finishes, a message confirms that it has been added to the note. In this example, the Korean summary appears beneath a date and language separator. The earlier English note remains, and Original Content is still available below it.
 
 AI summaries can omit or misinterpret information. Compare important numbers, dates, names, and conclusions with the article. Long texts may include a processing-coverage notice; check whether any portion was omitted.
+
+## How to follow the Korean controls
+
+The app interface in the recording is **Korean**. Use this guide to distinguish the English source, the chosen output language, and the Korean result:
+
+1. **Read the source:** “원본 내용” means **Original Content**. The video first shows the English article’s title and brief introduction. The result is based on the body already saved in the app, not just the short introduction shown in the edit.
+2. **Open the right menu:** Choose “다른 언어로 요약…” (**Summarize in another language…**). The neighboring “번역하기…” means **Translate…**, which is a different action and is not the one demonstrated. “원문 다시 가져오기” means **Fetch original again**; “요약하기” is the separate **Summarize** action. The edited clip shows the selected-language-summary menu being chosen.
+3. **Confirm Korean and start:** In the picker, “요약할 언어” means **Summary language**. “한국어” is **Korean**, and the checkmark beside it identifies the selected language. Korean is already checked when this recorded picker opens; the clip does not show changing another language to Korean. “요약하기와 같음” means **Same as Summarize**. The upper-right “요약” starts the request, while “취소” cancels it.
+4. **Wait or cancel:** “요약 중” means **Summarizing**. The “취소” button on that progress card can cancel the operation. Waiting is shortened in the video; it is not a benchmark of processing speed.
+5. **Read the result:** “요약을 노트에 추가했습니다” means **The summary has been added to the note**. “확인” dismisses that message. In the note, the date followed by “요약 · 한국어” identifies the new **Summary · Korean** entry. The displayed Korean opening paragraph says, in brief, that Linux and Wikipedia illustrate collaborative production and open sharing, in contrast to conventional firm-led production. This is the AI’s summary, not a certified translation; compare it with the source.
+
 
 ## Requirements and limits
 
