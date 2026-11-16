@@ -5,11 +5,23 @@ excerpt: "Choose a summary language for a saved article and add the result to yo
 status: approved
 ---
 
-Updated on November 17, 2026 with ZupZup 1.15 screens. These silent excerpts crop only app controls from the November 15 recording. Article text, images, and the personal library are excluded. The clips do not show the full processing duration.
+Updated on November 17, 2026 with ZupZup 1.15 screens. These silent excerpts crop only app controls from the November 15 recording. Full article text, images, and the personal library are excluded. The clips do not show the full processing duration.
 
 This guide describes the workflow checked in ZupZup 1.15.
 
 Sometimes you save an article in another language but do not have time to read it in full. If you want an overview in a familiar language before deciding what to read closely, try selecting a summary language in ZupZup.
+
+## From saving a link to seeing the fetched body
+
+The save form opened from Safari sharing shows the title and URL. The item detail then displays a webpage-body analysis status, followed by a saved-body link and Original Content. This recording shows the real state transition after saving, not a manual tap on a fetch command.
+
+[Save form → body analysis → saved body and Original Content](/media/zupzup-guides/web/save-and-fetch-v115.mp4)
+
+The app switch and personal library are omitted, preserving chronological order. This silent edit plays at half speed to make the state change readable; it does not represent actual processing time. Only the article title, source and the minimum interface needed for this explanation are shown.
+
+![Webpage body analysis in progress](/media/zupzup-guides/web/body-analysis-v115.png)
+
+![Saved body and Original Content available](/media/zupzup-guides/web/body-ready-v115.png)
 
 ## Check the saved body first
 
@@ -52,3 +64,5 @@ Fetching article content: <https://blog.52proj.com/en/zupzup/save-web-link-and-f
 App details: <https://apps.apple.com/app/id6758145905>
 
 [hello@52proj.com](mailto:hello@52proj.com)
+
+[The MIT Press Reader](https://thereader.mitpress.mit.edu/from-linux-to-wikipedia-how-volunteers-build-the-internet/)

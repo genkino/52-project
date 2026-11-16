@@ -45,7 +45,7 @@ test('all nine new articles include the reviewed media, localized routes, and co
   const cases = [
     { slug: 'screenshot-cleanup', videos: 1, images: 2 },
     { slug: 'screenshot-title-summary-tags', videos: 2, images: 1 },
-    { slug: 'save-web-link-and-fetch-content', videos: 1, images: 1 },
+    { slug: 'save-web-link-and-fetch-content', videos: 2, images: 3 },
   ]
   const assets = new Set<string>()
   for (const { slug, videos, images } of cases) {
@@ -69,5 +69,5 @@ test('all nine new articles include the reviewed media, localized routes, and co
 
     }
   }
-  assert.equal(assets.size, 8)
+  assert.equal(assets.size, 11)
 })

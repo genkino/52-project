@@ -5,11 +5,23 @@ excerpt: "Check the fetched text and images, then choose which title, summary, a
 status: approved
 ---
 
-Updated on November 17, 2026 with ZupZup 1.15 screens. These silent excerpts crop only app controls from the November 15 recording. Article text, images, and the personal library are excluded. The clips do not show the full processing duration.
+Updated on November 17, 2026 with ZupZup 1.15 screens. These silent excerpts crop only app controls from the November 15 recording. Full article text, images, and the personal library are excluded. The clips do not show the full processing duration.
 
 It is easy to save an article and move on as soon as the link appears. If you plan to read it again, take a moment to check the saved body and leave a useful title or note.
 
 In this example, I opened an English article in ZupZup, checked its body, and applied the organizing suggestions I wanted. The example recording uses Korean interface labels.
+
+## From saving a link to seeing the fetched body
+
+The save form opened from Safari sharing shows the title and URL. The item detail then displays a webpage-body analysis status, followed by a saved-body link and Original Content. This recording shows the real state transition after saving, not a manual tap on a fetch command.
+
+[Save form → body analysis → saved body and Original Content](/media/zupzup-guides/web/save-and-fetch-v115.mp4)
+
+The app switch and personal library are omitted, preserving chronological order. This silent edit plays at half speed to make the state change readable; it does not represent actual processing time. Only the article title, source and the minimum interface needed for this explanation are shown.
+
+![Webpage body analysis in progress](/media/zupzup-guides/web/body-analysis-v115.png)
+
+![Saved body and Original Content available](/media/zupzup-guides/web/body-ready-v115.png)
 
 ## Check the text and images first
 
