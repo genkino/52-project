@@ -23,6 +23,10 @@ The app switch and personal library are omitted, preserving chronological order.
 
 ## Check the text and images first
 
+[Scroll through the saved English body from beginning to end](/media/zupzup-guides/web/saved-body-scroll-v115.mp4)
+
+This continuous excerpt follows the actual scroll through the fetched body: heading and introduction, article images, paragraphs, and the author note at the end. It uses seconds 9–20 of the supplied recording at original speed and without zooming. It demonstrates the content present in the app, not a verified archive of every element on the source website.
+
 Original Content shows the heading, paragraphs, links, and images. I scrolled through the text and checked the image strip. Unlike the earlier example, which initially contained only brief title-level information, this check shows the fetched body before the suggestions are applied.
 
 ![Fetched English heading and introduction in the Original Content card](/media/zupzup-guides/web/english-source-preview-v115.png)

@@ -13,13 +13,17 @@ Start with an item that already contains saved English text. The user confirms t
 
 The example source is The MIT Press Reader’s “From Linux to Wikipedia: How Volunteers Build the Internet,” an English article about peer production such as Linux and Wikipedia. The video first shows its title and short introduction, then the “summarize in another language” menu action, Korean selected in the language picker, and the summary action, followed by the Korean result added to the note.
 
-[Source title and introduction → summarize-in-another-language menu → Korean selection and action → result](/media/zupzup-guides/web/english-source-to-korean-summary-v115.mp4)
+[Source title and introduction → summarize-in-another-language menu → Korean selection and action → result](/media/zupzup-guides/web/english-source-to-korean-summary-full-menu-v115.mp4)
 
-Only the source title and brief introduction are shown publicly, but the actual operation uses the body saved in the app. It is separate from the initial English organizing suggestion. The menu action is slowed for readability and waiting is shortened; the result is limited to its date, language and opening paragraph, slowed for readability. This is not a full translation or a guarantee of accuracy.
+The menu action now uses the original full-screen proportions so you can see where the bottom menu opens. Waiting is shortened; the completion dialog and result paragraph are excerpted. The separate scrolling video shows the complete scroll through the saved source.
 
 ![Title and brief introduction of the English source article](/media/zupzup-guides/web/english-source-preview-v115.png)
 
 ## Check the saved body first
+
+[Scroll through the saved English body from beginning to end](/media/zupzup-guides/web/saved-body-scroll-v115.mp4)
+
+This continuous excerpt follows the actual scroll through the fetched body: heading and introduction, article images, paragraphs, and the author note at the end. It uses seconds 9–20 of the supplied recording at original speed and without zooming. It demonstrates the content present in the app, not a verified archive of every element on the source website.
 
 Open Original Content before requesting a summary. This example, using the Korean interface, starts with paragraphs and images from an English article already present. A summary alone may not reveal that part of a page was never fetched, so check the saved content first.
 
