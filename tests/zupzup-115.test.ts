@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import fs from 'node:fs'
 import { getPostBySlug, LOCALES, renderPostBody } from '../lib/posts'
 
-test('ZupZup 1.15 guides are approved in all locales, linked with existing media preserved', () => {
+test('ZupZup 1.15 guides are approved in all locales, linked with refreshed media', () => {
   for (const locale of LOCALES) {
     for (const slug of ['save-web-link-and-fetch-content', 'summarize-in-another-language']) {
       const post = getPostBySlug(locale, 'zupzup', slug)
@@ -11,10 +12,20 @@ test('ZupZup 1.15 guides are approved in all locales, linked with existing media
       const html = renderPostBody(post.body)
       assert.match(html, /ZupZup 1\.15/)
       assert.doesNotMatch(html, /<iframe|\/Users\/|libfile_|status: draft/)
-      if (slug === 'summarize-in-another-language') assert.doesNotMatch(html, /<video|<img/)
+      if (slug === 'summarize-in-another-language') {
+        assert.equal((html.match(/<video /g) ?? []).length, 2)
+        assert.equal((html.match(/<img /g) ?? []).length, 2)
+      }
       assert.match(html, /apps.apple.com\/app\/id6758145905/)
       const companion = slug === 'summarize-in-another-language' ? 'save-web-link-and-fetch-content' : 'summarize-in-another-language'
       assert.ok(html.includes(`/${locale}/zupzup/${companion}/`))
     }
+  }
+})
+
+
+test('older published web guide assets remain available', () => {
+  for (const name of ['01-save-sheet-crop.mp4', '02-review-suggestions.mp4', '03-fetch-body-images.mp4', '03-saved-link-before-body.png', '05-fetch-menu.png']) {
+    assert.ok(fs.statSync(`public/media/zupzup-guides/web/${name}`).size > 0)
   }
 })

@@ -5,6 +5,8 @@ excerpt: "Choose a summary language for a saved article and add the result to yo
 status: approved
 ---
 
+Updated on November 17, 2026 with ZupZup 1.15 screens. These silent excerpts crop only app controls from the November 15 recording. Article text, images, and the personal library are excluded. The clips do not show the full processing duration.
+
 This guide describes the workflow checked in ZupZup 1.15.
 
 Sometimes you save an article in another language but do not have time to read it in full. If you want an overview in a familiar language before deciding what to read closely, try selecting a summary language in ZupZup.
@@ -19,9 +21,19 @@ Open the action for summarizing in another language from the bottom menu. In thi
 
 The choices come from the app’s languages supported by the device’s model. Check which options are available on your device rather than assuming every language is supported.
 
+
+![Summary language screen with Korean selected](/media/zupzup-guides/web/summary-language.png)
+
+[Summary language screen with Korean selected](/media/zupzup-guides/web/summary-language.mp4)
+
 ## See progress and cancel if needed
 
 A summary progress card appears in the detail view, with a cancel action. This example shows a single example. Processing time can vary with the text and device conditions.
+
+
+![Summary progress and Cancel control](/media/zupzup-guides/web/summary-progress.png)
+
+[Short excerpt of the summary processing state](/media/zupzup-guides/web/summary-progress.mp4)
 
 ## Keep the original and previous notes
 
