@@ -5,6 +5,10 @@ excerpt: "Check what was saved through the share menu, then fetch the content yo
 status: "approved"
 ---
 
+## Version 1.15: choose a summary language for the saved body
+
+In ZupZup 1.15, you can summarize saved content in a supported language and add the result to your notes. The existing clips below show an earlier save-and-fetch workflow, not the new language-selection feature. See [how to choose a summary language](/en/zupzup/summarize-in-another-language/) for the steps and requirements.
+
 After saving an article from a browser, it is easy to move on as soon as you see that the link is there. Opening the saved item later and checking its contents helps you decide whether to fetch more of the original or simply add a note.
 
 For this example, I saved The MIT Press Reader article ‘From Linux to Wikipedia: How Volunteers Build the Internet’ from Safari to ZupZup. The sequence was to save the link through the share menu, review the organizing suggestions, and then fetch the webpage’s text and images into the same item.
