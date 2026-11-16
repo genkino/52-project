@@ -25,6 +25,10 @@ The app switch and personal library are omitted, preserving chronological order.
 
 Original Content shows the heading, paragraphs, links, and images. I scrolled through the text and checked the image strip. Unlike the earlier example, which initially contained only brief title-level information, this check shows the fetched body before the suggestions are applied.
 
+![Fetched English heading and introduction in the Original Content card](/media/zupzup-guides/web/english-source-preview-v115.png)
+
+This is the heading and introduction of the English body saved inside the app, not merely a URL preview. It identifies the article as a discussion of peer production through Linux and Wikipedia. “원본 내용” means Original Content; the public screenshot shows the introduction, not the rest of the article or its third-party images.
+
 Check saving a link and fetching its content as separate steps. Site structure, access restrictions, and network conditions can affect what is retrieved. Compare important material with the original. This check does not establish complete preservation of every webpage or offline availability.
 
 ## Check the English summary and organizing suggestions
@@ -34,6 +38,10 @@ In this example, an English summary and tag candidates appear after the English 
 [English summary and tag suggestions displayed](/media/zupzup-guides/web/english-summary-suggestion-v115.mp4)
 
 This excerpt uses 24–24.4 seconds of the source at 0.25× speed for readability. It shows this example’s language, not a rule about the default language for every source.
+
+![Organizing suggestions with English summary, tag candidates and Apply/Reject controls](/media/zupzup-guides/web/organizing-suggestion-v115.png)
+
+This screen shows suggestions before they are applied to a note. Under “요약” (Summary) is an English summary; “태그” lists tag candidates. “거절” rejects and “적용” applies the respective suggestion; “모두 거절” and “모두 적용” act on all suggestions. The badge “AI 제안 · 확인 필요” means AI suggestion · review required. These are candidates to check, not a newly requested Korean summary.
 
 ## How to read the Korean screens
 
