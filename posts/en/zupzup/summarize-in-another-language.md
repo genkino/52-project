@@ -25,7 +25,7 @@ The app switch and personal library are omitted, preserving chronological order.
 
 ## From choosing a language to the summary result
 
-Follow the Korean-language selection, the processing state, and the confirmation that the Korean result was added to the note, all from the same recording. Waiting is shortened in this silent edit; each excerpt plays at its original speed. This is not a full translation or a guarantee of summary accuracy.
+Follow the Korean-language selection, the processing state, and the confirmation that the Korean result was added to the note, all from the same recording. Waiting is shortened in this silent edit; the result is limited to its date, language and opening paragraph, with the final excerpt slowed for readability. This is not a full translation or a guarantee of summary accuracy.
 
 [Language selection → summary processing → Korean result added to the note](/media/zupzup-guides/web/summary-to-result-v115.mp4)
 
