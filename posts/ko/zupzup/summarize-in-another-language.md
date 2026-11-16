@@ -19,7 +19,7 @@ Safari 공유로 연 자료 저장 폼에서 제목과 URL을 확인한 다음, 
 
 앱 전환과 개인 목록 구간은 생략하고 시간 순서는 유지했습니다. 상태 변화를 읽기 쉽도록 0.5배속으로 편집한 무음 영상이며, 실제 소요 시간을 나타내지는 않습니다. 기사 제목·출처와 기능 설명에 필요한 최소 화면만 남겼습니다.
 
-![본문 분석 중인 상태](/media/zupzup-guides/web/body-analysis-v115.png)
+![본문과 이미지를 가져오는 중인 상태](/media/zupzup-guides/web/body-analysis-v115.png)
 
 ![저장된 본문과 원본 내용이 나타난 상태](/media/zupzup-guides/web/body-ready-v115.png)
 

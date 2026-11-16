@@ -19,7 +19,7 @@ The save form opened from Safari sharing shows the title and URL. The item detai
 
 The app switch and personal library are omitted, preserving chronological order. This silent edit plays at half speed to make the state change readable; it does not represent actual processing time. Only the article title, source and the minimum interface needed for this explanation are shown.
 
-![Webpage body analysis in progress](/media/zupzup-guides/web/body-analysis-v115.png)
+![Fetching the webpage body and images](/media/zupzup-guides/web/body-analysis-v115.png)
 
 ![Saved body and Original Content available](/media/zupzup-guides/web/body-ready-v115.png)
 
