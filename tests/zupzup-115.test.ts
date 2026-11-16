@@ -16,13 +16,14 @@ test('ZupZup 1.15 guides are approved in all locales, linked with refreshed medi
         assert.match(html, /english-summary-suggestion-v115\.mp4/)
         assert.doesNotMatch(html, /summary-to-result-v115\.mp4|initial-english-summary/)
       } else {
-        assert.match(html, /summary-to-result-v115\.mp4/)
+        assert.match(html, /english-source-to-korean-summary-v115\.mp4/)
+        assert.match(html, /english-source-preview-v115\.png/)
         assert.doesNotMatch(html, /save-and-fetch-v115\.mp4|initial-english-summary/)
       }
       assert.doesNotMatch(html, /<iframe|\/Users\/|libfile_|status: draft/)
       if (slug === 'summarize-in-another-language') {
         assert.equal((html.match(/<video /g) ?? []).length, 1)
-        assert.equal((html.match(/<img /g) ?? []).length, 2)
+        assert.equal((html.match(/<img /g) ?? []).length, 3)
       }
       assert.match(html, /apps.apple.com\/app\/id6758145905/)
       const companion = slug === 'summarize-in-another-language' ? 'save-web-link-and-fetch-content' : 'summarize-in-another-language'

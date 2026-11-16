@@ -9,12 +9,15 @@ ZupZup 1.15
 
 Start with an item that already contains saved English text. The user explicitly selects Korean and requests a separate summary. This is different from the initial English summary suggested when the webpage was fetched.
 
-## Separate step: the result after explicitly choosing Korean
+## English source → summarize in another language → Korean result
 
+The example source is The MIT Press Reader’s “From Linux to Wikipedia: How Volunteers Build the Internet,” an English article about peer production such as Linux and Wikipedia. The video first shows its title and short introduction, then the “summarize in another language” menu action, Korean selected in the language picker, and the summary action, followed by the Korean result added to the note.
 
-Follow the Korean-language selection, the processing state, and the confirmation that the Korean result was added to the note, all from the same recording. Waiting is shortened in this silent edit; the result is limited to its date, language and opening paragraph, with the final excerpt slowed for readability. This is not a full translation or a guarantee of summary accuracy.
+[Source title and introduction → summarize-in-another-language menu → Korean selection and action → result](/media/zupzup-guides/web/english-source-to-korean-summary-v115.mp4)
 
-[Language selection → summary processing → Korean result added to the note](/media/zupzup-guides/web/summary-to-result-v115.mp4)
+Only the source title and brief introduction are shown publicly, but the actual operation uses the body saved in the app. It is separate from the initial English organizing suggestion. The menu action is slowed for readability and waiting is shortened; the result is limited to its date, language and opening paragraph, slowed for readability. This is not a full translation or a guarantee of accuracy.
+
+![Title and brief introduction of the English source article](/media/zupzup-guides/web/english-source-preview-v115.png)
 
 ## Check the saved body first
 
