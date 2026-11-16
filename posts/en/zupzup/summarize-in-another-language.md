@@ -45,6 +45,10 @@ A summary progress card appears in the detail view, with a cancel action. This e
 
 When the summary finishes, a message confirms that it has been added to the note. In this example, the Korean summary appears beneath a date and language separator. The earlier English note remains, and Original Content is still available below it.
 
+![Actual Korean summary result showing the English article title, date, language and complete TL;DR paragraph](/media/zupzup-guides/web/summary-result-ko-v115.png)
+
+This is the completed result captured from the recording, not the progress screen. The English article title remains at the top. “저장된 본문 보기” means **View saved body**, while “노트” means **Note**. The date and “요약 · 한국어” (**Summary · Korean**) mark the newly added entry. Its complete opening TL;DR paragraph is visible: it describes Linux and Wikipedia as examples of collaborative production and open software/knowledge sharing, contrasted with conventional firms. The detailed bullets below are outside this screenshot. The source has not been replaced with Korean; a Korean summary has been added to the note.
+
 AI summaries can omit or misinterpret information. Compare important numbers, dates, names, and conclusions with the article. Long texts may include a processing-coverage notice; check whether any portion was omitted.
 
 ## How to follow the Korean controls
