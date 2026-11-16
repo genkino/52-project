@@ -11,10 +11,14 @@ test('ZupZup 1.15 guides are approved in all locales, linked with refreshed medi
       assert.equal(post.date, slug === 'summarize-in-another-language' ? '2026-11-17' : '2026-11-07')
       const html = renderPostBody(post.body)
       assert.match(html, /ZupZup 1\.15/)
+      assert.match(html, /save-and-fetch-v115\.mp4/)
+      assert.match(html, /summary-to-result-v115\.mp4/)
+      assert.match(html, /body-analysis-v115\.png/)
+      assert.match(html, /body-ready-v115\.png/)
       assert.doesNotMatch(html, /<iframe|\/Users\/|libfile_|status: draft/)
       if (slug === 'summarize-in-another-language') {
-        assert.equal((html.match(/<video /g) ?? []).length, 2)
-        assert.equal((html.match(/<img /g) ?? []).length, 2)
+        assert.equal((html.match(/<video /g) ?? []).length, 4)
+        assert.equal((html.match(/<img /g) ?? []).length, 4)
       }
       assert.match(html, /apps.apple.com\/app\/id6758145905/)
       const companion = slug === 'summarize-in-another-language' ? 'save-web-link-and-fetch-content' : 'summarize-in-another-language'
