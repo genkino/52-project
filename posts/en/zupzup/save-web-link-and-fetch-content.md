@@ -9,13 +9,13 @@ This guide describes the workflow checked in ZupZup 1.15.
 
 It is easy to save an article and move on as soon as the link appears. If you plan to read it again, take a moment to check the saved body and leave a useful title or note.
 
-In this example, I opened an English article in ZupZup, checked its body, and applied the organizing suggestions I wanted. The example recording uses Korean interface labels.
+In this example, I opened an English article in ZupZup, checked its body, and applied the organizing suggestions I wanted. This example uses Korean interface labels.
 
 ## Check the text and images first
 
-Original Content shows the heading, paragraphs, links, and images. I scrolled through the text and checked the image strip. Unlike the earlier example, which initially contained only brief title-level information, this recording shows the fetched body before the suggestions are applied.
+Original Content shows the heading, paragraphs, links, and images. I scrolled through the text and checked the image strip. Unlike the earlier example, which initially contained only brief title-level information, this example shows the fetched body before the suggestions are applied.
 
-Check saving a link and fetching its content as separate steps. Site structure, access restrictions, and network conditions can affect what is retrieved. Compare important material with the original. This recording does not establish complete preservation of every webpage or offline availability.
+Check saving a link and fetching its content as separate steps. Site structure, access restrictions, and network conditions can affect what is retrieved. Compare important material with the original. This example does not establish complete preservation of every webpage or offline availability.
 
 ## Choose suggestions individually
 

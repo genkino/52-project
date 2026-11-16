@@ -11,7 +11,7 @@ Sometimes you save an article in another language but do not have time to read i
 
 ## Check the saved body first
 
-Open Original Content before requesting a summary. This example, recorded with the Korean interface, starts with paragraphs and images from an English article already present. A summary alone may not reveal that part of a page was never fetched, so check the saved content first.
+Open Original Content before requesting a summary. This example, using the Korean interface, starts with paragraphs and images from an English article already present. A summary alone may not reveal that part of a page was never fetched, so check the saved content first.
 
 ## Choose the language
 
