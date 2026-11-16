@@ -7,7 +7,7 @@ status: approved
 
 ZupZup 1.15
 
-Start with an item that already contains saved English text. The user explicitly selects Korean and requests a separate summary. This is different from the initial English summary suggested when the webpage was fetched.
+Start with an item that already contains saved English text. The user confirms that Korean is selected and requests a separate summary. This is different from the initial English summary suggested when the webpage was fetched.
 
 ## English source → summarize in another language → Korean result
 
@@ -25,7 +25,7 @@ Open Original Content before requesting a summary. This example, using the Korea
 
 ## Choose the language
 
-Open the action for summarizing in another language from the bottom menu. In this example, I selected Korean. This produces a shorter account of the saved body rather than translating the entire article.
+Open the action for summarizing in another language from the bottom menu. In this example, I confirmed that Korean was already selected and started the summary. This produces a shorter account of the saved body rather than translating the entire article.
 
 The choices come from the app’s languages supported by the device’s model. Check which options are available on your device rather than assuming every language is supported.
 
