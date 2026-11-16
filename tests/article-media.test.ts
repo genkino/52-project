@@ -45,7 +45,7 @@ test('all nine new articles include the reviewed media, localized routes, and co
   const cases = [
     { slug: 'screenshot-cleanup', videos: 1, images: 2 },
     { slug: 'screenshot-title-summary-tags', videos: 2, images: 1 },
-    { slug: 'save-web-link-and-fetch-content', videos: 3, images: 2 },
+    { slug: 'save-web-link-and-fetch-content', videos: 1, images: 1 },
   ]
   const assets = new Set<string>()
   for (const { slug, videos, images } of cases) {
@@ -66,12 +66,8 @@ test('all nine new articles include the reviewed media, localized routes, and co
       if (slug !== 'screenshot-title-summary-tags') {
         assert.ok(rendered.includes(`https://blog.52proj.com/${locale}/zupzup/zupzup-first-save/`))
       }
-      if (slug === 'save-web-link-and-fetch-content') {
-        assert.match(rendered, /href="https:\/\/thereader.mitpress.mit.edu\/from-linux-to-wikipedia-how-volunteers-build-the-internet\/"/)
-        assert.match(rendered, /href="https:\/\/mitpress.mit.edu\/9780262054805\/peer-production\/"/)
-        assert.match(rendered, /Adobe Stock/)
-      }
+
     }
   }
-  assert.equal(assets.size, 11)
+  assert.equal(assets.size, 8)
 })

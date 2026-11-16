@@ -1,76 +1,49 @@
 ---
-title: "Adding article text and images to a link saved from Safari"
-date: "2026-11-07"
-excerpt: "Check what was saved through the share menu, then fetch the content you need later."
-status: "approved"
+title: "Read and organize a webpage saved from Safari"
+date: 2026-11-07
+excerpt: "Check the fetched text and images, then choose which title, summary, and tag suggestions to apply."
+status: approved
 ---
 
-## Version 1.15: choose a summary language for the saved body
+Updated on November 17, 2026 with ZupZup 1.15 screens. These silent excerpts crop only app controls from the November 15 recording. Article text, images, and the personal library are excluded. The clips do not show the full processing duration.
 
-In ZupZup 1.15, you can summarize saved content in a supported language and add the result to your notes. The existing clips below show an earlier save-and-fetch workflow, not the new language-selection feature. See [how to choose a summary language](/en/zupzup/summarize-in-another-language/) for the steps and requirements.
+It is easy to save an article and move on as soon as the link appears. If you plan to read it again, take a moment to check the saved body and leave a useful title or note.
 
-After saving an article from a browser, it is easy to move on as soon as you see that the link is there. Opening the saved item later and checking its contents helps you decide whether to fetch more of the original or simply add a note.
+In this example, I opened an English article in ZupZup, checked its body, and applied the organizing suggestions I wanted. The example recording uses Korean interface labels.
 
-For this example, I saved The MIT Press Reader article ‘From Linux to Wikipedia: How Volunteers Build the Internet’ from Safari to ZupZup. The sequence was to save the link through the share menu, review the organizing suggestions, and then fetch the webpage’s text and images into the same item.
+## Check the text and images first
 
-## About the example screens
+Original Content shows the heading, paragraphs, links, and images. I scrolled through the text and checked the image strip. Unlike the earlier example, which initially contained only brief title-level information, this check shows the fetched body before the suggestions are applied.
 
-The screenshots and videos use Korean. This article uses the corresponding English menu labels. ZupZup’s interface supports Korean, English, Japanese, Spanish, German, French, Brazilian Portuguese, Simplified Chinese, and Traditional Chinese. AI suggestions have separate language support and requirements.
+Check saving a link and fetching its content as separate steps. Site structure, access restrictions, and network conditions can affect what is retrieved. Compare important material with the original. This check does not establish complete preservation of every webpage or offline availability.
 
-## Save from Safari’s share menu
+## Choose suggestions individually
 
-Choosing Zupzup in Safari’s share menu opens Save Item. You can check the title, URL, and shared content before saving. There is also a note field labeled ‘Why are you saving this?’
+The suggestion card offers a title, summary, and tags. You can accept or reject the title and summary separately and select the tags you want. You do not need to accept every suggestion.
 
-[Silent edited clip of ZupZup’s save form with an article title, URL, and empty note, followed by a return to Safari.](/media/zupzup-guides/web/01-save-sheet-crop.mp4)
+In this example, the title became shorter and an English summary appeared in the note. Original Content remained separate, making it possible to compare the note with the article. Check important figures and wording before accepting AI-generated suggestions.
 
-*Check the shared article title and URL, then save.*
+![Suggested tags and the Apply button](/media/zupzup-guides/web/tag-selection.png)
 
-In this example, I left the note empty. When I opened the saved item in ZupZup, it showed the original link and article title. Original Content contained only brief information at the level of the title and publication name. The full article and its images had not all been saved at this point.
+[Short demonstration of deselecting unwanted tag suggestions](/media/zupzup-guides/web/tag-selection.mp4)
 
-![Saved item detail screen before fetching the body, showing the article link, title, and brief original content.](/media/zupzup-guides/web/03-saved-link-before-body.png)
 
-*Immediately after saving, Original Content contains only brief title-level information.*
+## Keep the article and your notes distinct
 
-## Apply the suggestions you want
+Read the fetched article in Original Content and use the note for summaries and your own comments. To summarize the saved body in another supported language, use the language-selection summary action. The companion article, “Summarize a saved article in the language you want,” explains that flow.
 
-The next recording shows Suggested Cleanup for the same item, with title, summary, and tag suggestions. In the card marked as AI suggestions requiring review, I applied the title and summary in turn, then deselected unwanted tag suggestions before applying the remaining selection.
+## Before using AI features
 
-The title became the shorter ‘From Linux to Wikipedia’, and the summary appeared in the note. There was no need to accept every new tag. The process was to compare the suggestions with the original content and choose the useful parts.
+AI suggestions and summaries require a device and settings that support Apple Intelligence and a ready on-device model. Automatic-analysis settings and usage allowances can affect whether suggestions appear. The interface’s nine languages are separate from AI language availability.
 
-This happened before the webpage’s full text was fetched. The summary shown here should therefore not be presented as a summary based on reading the entire article. Check its claims against the original separately.
+The original creators retain the rights to the article and images. Personal reference and public republication are different uses. Check the source and reuse terms before sharing screens.
 
-[Silent clip of applying a title and summary, then choosing and applying tags. It does not show a completed summary of the full article.](/media/zupzup-guides/web/02-review-suggestions.mp4)
+Getting started: <https://blog.52proj.com/en/zupzup/zupzup-first-save/>
 
-*Review suggestions before fetching the article body, then apply the title, summary, and selected tags.*
+App details: <https://apps.apple.com/app/id6758145905>
 
-## Fetch text and images into the same item
+[Summarizing in another language](/en/zupzup/summarize-in-another-language/)
 
-Next, I opened the fetch menu at the bottom of the saved item. It contains separate options for Fetch Full Content (incl. images) and Extract & Summarize (incl. images).
+[hello@52proj.com](mailto:hello@52proj.com)
 
-![Fetch menu with separate options for full content and extraction with summarization.](/media/zupzup-guides/web/05-fetch-menu.png)
-
-*Fetching the content and extracting a summary are separate menu options.*
-
-Because the item already contained information, a Fetch Web Page Again confirmation appeared. It offered Fetch Fresh and Add to Existing Content, with a notice that the existing data would be kept if fetching the new content failed. If you have written your own content, check which option you want before proceeding.
-
-When fetching finished, the message said the webpage’s text had been fetched and three images added. I then browsed the image group and scrolled through the longer text in Original Content. What this recording confirms is that text and three images were fetched. Although the dialog title includes ‘Summarize’, that alone does not establish that a new summary was generated.
-
-[Silent clip showing the fetch menu, refetch confirmation, completion message for three images, and the fetched images and article text.](/media/zupzup-guides/web/03-fetch-body-images.mp4)
-
-*Check the images and Original Content after fetching. Three images were added in this example.*
-
-## Check the result after saving
-
-In this sequence, I saved the link first, checked what had arrived, and then added the text and images I needed. The brief content saved initially and the fuller text fetched later can be checked as separate stages.
-
-Other sites will not necessarily yield all their text and images in the same way. Site structure, access restrictions, and network conditions can affect the result. Compare important material with the original. This recording also does not verify offline reading or preservation of the entire original webpage.
-
-Saving a link, fetching its text, and generating AI organizing suggestions are separate steps. AI suggestions and summaries require a device and settings that support Apple Intelligence. The automatic-analysis setting and usage allowance can also affect whether suggestions appear.
-
-The original creators retain the rights to the text and images. Keeping something for personal reference and republishing it on a blog are different uses. Before sharing example screens, check the source and reuse terms and include only what is needed to explain the feature.
-
-For the basics of finding items with notes and tags, see the [ZupZup introduction](https://blog.52proj.com/en/zupzup/zupzup-first-save/). App details are available on the [ZupZup App Store page](https://apps.apple.com/app/id6758145905).
-
-Content shown in the screens: “[From Linux to Wikipedia: How Volunteers Build the Internet](https://thereader.mitpress.mit.edu/from-linux-to-wikipedia-how-volunteers-build-the-internet/),” The MIT Press Reader, by Benjamin Mako Hill, Christian Pentzold, and Aaron Shaw. The article credits its lead image to Adobe Stock. The book shown is [Peer Production](https://mitpress.mit.edu/9780262054805/peer-production/) by the same authors, published by The MIT Press.
-
-Some screens in this article include third-party content to illustrate app features. If you have a rights-related concern, please contact [hello@52proj.com](mailto:hello@52proj.com). We will review it and take appropriate action.
+Article used for the walkthrough: [The MIT Press Reader](https://thereader.mitpress.mit.edu/from-linux-to-wikipedia-how-volunteers-build-the-internet/).
