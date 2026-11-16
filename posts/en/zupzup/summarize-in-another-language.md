@@ -47,6 +47,17 @@ When the summary finishes, a message confirms that it has been added to the note
 
 AI summaries can omit or misinterpret information. Compare important numbers, dates, names, and conclusions with the article. Long texts may include a processing-coverage notice; check whether any portion was omitted.
 
+## How to follow the Korean controls
+
+The app interface in the recording is **Korean**. Use this guide to distinguish the English source, the chosen output language, and the Korean result:
+
+1. **Read the source:** “원본 내용” means **Original Content**. The video first shows the English article’s title and brief introduction. The result is based on the body already saved in the app, not just the short introduction shown in the edit.
+2. **Open the right menu:** Choose “다른 언어로 요약…” (**Summarize in another language…**). The neighboring “번역하기…” means **Translate…**, which is a different action and is not the one demonstrated. “원문 다시 가져오기” means **Fetch original again**; “요약하기” is the separate **Summarize** action. The edited clip shows the selected-language-summary menu being chosen.
+3. **Confirm Korean and start:** In the picker, “요약할 언어” means **Summary language**. “한국어” is **Korean**, and the checkmark beside it identifies the selected language. Korean is already checked when this recorded picker opens; the clip does not show changing another language to Korean. “요약하기와 같음” means **Same as Summarize**. The upper-right “요약” starts the request, while “취소” cancels it.
+4. **Wait or cancel:** “요약 중” means **Summarizing**. The “취소” button on that progress card can cancel the operation. Waiting is shortened in the video; it is not a benchmark of processing speed.
+5. **Read the result:** “요약을 노트에 추가했습니다” means **The summary has been added to the note**. “확인” dismisses that message. In the note, the date followed by “요약 · 한국어” identifies the new **Summary · Korean** entry. The displayed Korean opening paragraph says, in brief, that Linux and Wikipedia illustrate collaborative production and open sharing, in contrast to conventional firm-led production. This is the AI’s summary, not a certified translation; compare it with the source.
+
+
 ## Requirements and limits
 
 A device and settings supporting Apple Intelligence and a ready model are required. Check language availability and the status shown in the app. Interface language support and summary-language support are separate.

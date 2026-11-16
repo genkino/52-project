@@ -35,6 +35,18 @@ In this example, an English summary and tag candidates appear after the English 
 
 This excerpt uses 24–24.4 seconds of the source at 0.25× speed for readability. It shows this example’s language, not a rule about the default language for every source.
 
+## How to read the Korean screens
+
+The recording and screenshots use the **Korean interface**, even in this English article. The English article text in the “원본 내용” card is the saved source, not the app’s interface language.
+
+1. **Save form:** “자료 저장” means **Save item**. “제목” is **Title**, “노트” is **Note**, and “URL” is the page address. “저장” saves the item; “취소” cancels. The video begins with the form opened from Safari sharing, not with a new English-language interface.
+2. **Fetching:** “웹페이지 본문을 분석하는 중” means **Analyzing the webpage body**. “이미지를 가져오는 중… 3/3” means **Fetching images… 3/3**. The “저장된 본문이나 PDF가 없습니다” message means no saved body or PDF is available at that moment; it is shown before the result arrives, not as a final failure.
+3. **Result:** “저장된 본문 보기” means **View saved body** and “가져온 시각” is the fetch time. “원본 내용” means **Original Content**. The English heading appearing in that card shows the fetched article becoming available. This cropped example does not display every paragraph or image.
+4. **Suggestions:** “정리 제안” means **Organizing suggestions**. “AI 제안 · 확인 필요” is **AI suggestion · review required**, and “요약” is **Summary**. The text under it is English in this example. “태그” marks the suggested tags; blue checked chips are selected. “거절” is **Reject**, “적용” is **Apply**, and the lower “모두 적용” is **Apply all**. Their presence does not mean they were accepted: this guide’s clip ends at the suggestions, before applying them to a note.
+
+No Korean translation is produced in this walkthrough. A separately requested summary in a chosen language is covered in the linked language-summary guide.
+
+
 ## Before using AI features
 
 AI suggestions and summaries require a device and settings that support Apple Intelligence and a ready on-device model. Automatic-analysis settings and usage allowances can affect whether suggestions appear. The interface’s nine languages are separate from AI language availability.
