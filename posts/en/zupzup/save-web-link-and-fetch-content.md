@@ -11,6 +11,8 @@ It is easy to save an article and move on as soon as the link appears. If you pl
 
 In this example, I opened an English article in ZupZup, checked its body, and applied the organizing suggestions I wanted. The example recording uses Korean interface labels.
 
+The initial organizing suggestion in this example is an English summary. The Korean result comes later, after the user explicitly chooses Korean in the summarize-in-another-language action. It is not the automatic result of fetching the webpage.
+
 ## From saving a link to seeing the fetched body
 
 The save form opened from Safari sharing shows the title and URL. The item detail then displays a webpage-body analysis status, followed by a saved-body link and Original Content. This recording shows the real state transition after saving, not a manual tap on a fetch command.
@@ -23,12 +25,6 @@ The app switch and personal library are omitted, preserving chronological order.
 
 ![Saved body and Original Content available](/media/zupzup-guides/web/body-ready-v115.png)
 
-## From choosing a language to the summary result
-
-Follow the Korean-language selection, the processing state, and the confirmation that the Korean result was added to the note, all from the same recording. Waiting is shortened in this silent edit; the result is limited to its date, language and opening paragraph, with the final excerpt slowed for readability. This is not a full translation or a guarantee of summary accuracy.
-
-[Language selection → summary processing → Korean result added to the note](/media/zupzup-guides/web/summary-to-result-v115.mp4)
-
 ## Check the text and images first
 
 Original Content shows the heading, paragraphs, links, and images. I scrolled through the text and checked the image strip. Unlike the earlier example, which initially contained only brief title-level information, this check shows the fetched body before the suggestions are applied.
@@ -40,6 +36,12 @@ Check saving a link and fetching its content as separate steps. Site structure, 
 The suggestion card offers a title, summary, and tags. You can accept or reject the title and summary separately and select the tags you want. You do not need to accept every suggestion.
 
 In this example, the title became shorter and an English summary appeared in the note. Original Content remained separate, making it possible to compare the note with the article. Check important figures and wording before accepting AI-generated suggestions.
+
+## First, apply the English summary suggestion
+
+The recording first shows an English summary suggestion being applied to create an English note. This excerpt uses 23–25.4 seconds of the source at about 0.67× speed for readability. It demonstrates this example, not a rule about the default summary language for every source.
+
+[English summary suggestion → Apply → English note](/media/zupzup-guides/web/initial-english-summary-v115.mp4)
 
 ![Suggested tags and the Apply button](/media/zupzup-guides/web/tag-selection.png)
 

@@ -12,12 +12,14 @@ test('ZupZup 1.15 guides are approved in all locales, linked with refreshed medi
       const html = renderPostBody(post.body)
       assert.match(html, /ZupZup 1\.15/)
       assert.match(html, /save-and-fetch-v115\.mp4/)
-      assert.match(html, /summary-to-result-v115\.mp4/)
+      assert.match(html, /initial-english-summary-v115\.mp4/)
+      if (slug === 'summarize-in-another-language') assert.match(html, /summary-to-result-v115\.mp4/)
+      else assert.doesNotMatch(html, /summary-to-result-v115\.mp4/)
       assert.match(html, /body-analysis-v115\.png/)
       assert.match(html, /body-ready-v115\.png/)
       assert.doesNotMatch(html, /<iframe|\/Users\/|libfile_|status: draft/)
       if (slug === 'summarize-in-another-language') {
-        assert.equal((html.match(/<video /g) ?? []).length, 4)
+        assert.equal((html.match(/<video /g) ?? []).length, 5)
         assert.equal((html.match(/<img /g) ?? []).length, 4)
       }
       assert.match(html, /apps.apple.com\/app\/id6758145905/)
