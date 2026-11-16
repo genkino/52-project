@@ -1,6 +1,12 @@
 name: Verify Cloudflare Pages token
 on:
   workflow_dispatch:
+    inputs:
+      check_home_worker:
+        description: Also check read access to the existing homepage Worker (no deploy)
+        type: boolean
+        required: false
+        default: false
 permissions:
   contents: read
 jobs:
@@ -17,6 +23,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CHECK_HOME_WORKER: ${{ inputs.check_home_worker }}
         run: |
           set -euo pipefail
           python3 - <<PY
@@ -89,4 +96,15 @@ jobs:
           if pages_http != 200:
               emit_error_codes("pages_project", parse_response(pages_body))
               sys.exit(1)
+          if os.environ.get("CHECK_HOME_WORKER") == "true":
+              # Fixed target, read-only. Never log the response body or bindings.
+              worker_path = f"/client/v4/accounts/{account_id}/workers/scripts/52project-home/settings"
+              worker_http, worker_body = call_api(worker_path)
+              worker_document = parse_response(worker_body)
+              print(f"home_worker_read_http_status={worker_http:03d}")
+              print(f"home_worker_read_success={worker_document.get('success') is True}")
+              if worker_http != 200 or worker_document.get("success") is not True:
+                  emit_error_codes("home_worker_read", worker_document)
+                  sys.exit(1)
+              print("home_worker_write_permission=not_tested")
           PY

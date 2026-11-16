@@ -56,3 +56,13 @@ preloading, an accessible label, and a fallback link. Place a localized caption
 in the next paragraph. Clips do not autoplay. Raw HTML remains sanitized; remote
 video URLs and other paths remain ordinary links. Only approved publication
 assets belong in `public/`; keep source packages and review notes outside it.
+
+### Read-only homepage Worker access check
+
+The existing `Verify Cloudflare Pages token` workflow accepts the optional
+`check_home_worker` boolean (default: `false`). When enabled on `main`, it also
+checks the fixed `52project-home` Worker settings endpoint using the existing
+production secret. It prints only HTTP status, success and numeric error codes,
+not credentials, account identifiers, response bodies or bindings. No Worker
+settings, permissions or deployments are changed. A successful read does **not**
+prove permission to deploy. The blog deployment workflow is unchanged.
