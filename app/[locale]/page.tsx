@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { DATE_LOCALES, LOCALE_LABELS, PAGE_COPY, PRODUCT_LABELS } from '@/lib/copy'
 import { isLocale, LOCALES, PRODUCTS, getPostsForLocale } from '@/lib/posts'
 import { sitePath } from '@/lib/site'
+import { PageMain, SkipToMain } from '../components/page-main'
 
 export default async function LocaleHomePage({
   params,
@@ -17,7 +18,8 @@ export default async function LocaleHomePage({
   const posts = getPostsForLocale(locale)
 
   return (
-    <main className="page-shell">
+    <div className="page-shell">
+      <SkipToMain locale={locale} />
       <header className="site-header">
         <Link className="site-brand" href={`/${locale}/`}>
           <span className="brand-mark">52</span>
@@ -31,6 +33,9 @@ export default async function LocaleHomePage({
             {LOCALES.map((targetLocale) => (
               <Link
                 aria-current={targetLocale === locale ? 'page' : undefined}
+                aria-label={`${targetLocale.toUpperCase()} · ${LOCALE_LABELS[targetLocale]}`}
+                lang={targetLocale}
+                hrefLang={targetLocale}
                 href={`/${targetLocale}/`}
                 key={targetLocale}
               >
@@ -44,77 +49,79 @@ export default async function LocaleHomePage({
         </div>
       </header>
 
-      <section className="hero">
-        <div className="hero-copy">
-          <p className="eyebrow">{copy.eyebrow}</p>
-          <h1>{copy.heroTitle}</h1>
-          <p>{copy.heroDescription}</p>
-        </div>
-        <div aria-hidden="true" className="hero-stamp">
-          <span>52</span>
-          <small>MAKE<br />& REFINE</small>
-        </div>
-      </section>
+      <PageMain>
+        <section className="hero">
+          <div className="hero-copy">
+            <p className="eyebrow">{copy.eyebrow}</p>
+            <h1>{copy.heroTitle}</h1>
+            <p>{copy.heroDescription}</p>
+          </div>
+          <div aria-hidden="true" className="hero-stamp">
+            <span>52</span>
+            <small>MAKE<br />& REFINE</small>
+          </div>
+        </section>
 
-      <div className="content-heading">
-        <div>
-          <p className="eyebrow">JOURNAL</p>
-          <h2>{copy.sectionsTitle}</h2>
+        <div className="content-heading">
+          <div>
+            <p className="eyebrow">JOURNAL</p>
+            <h2>{copy.sectionsTitle}</h2>
+          </div>
+          <nav className="category-nav" aria-label={copy.sectionsTitle}>
+            {PRODUCTS.map((product) => (
+              <a className={`category-pill ${product}`} href={`#${product}`} key={product}>
+                {PRODUCT_LABELS[locale][product]}
+              </a>
+            ))}
+          </nav>
         </div>
-        <nav className="category-nav" aria-label={copy.sectionsTitle}>
-          {PRODUCTS.map((product) => (
-            <a className={`category-pill ${product}`} href={`#${product}`} key={product}>
-              {PRODUCT_LABELS[locale][product]}
-            </a>
-          ))}
-        </nav>
-      </div>
 
-      <div className="product-sections">
-        {PRODUCTS.map((product, index) => {
-          const productPosts = posts.filter((post) => post.product === product)
-          return (
-            <section className="product-section" id={product} key={product}>
-              <div className="product-heading">
-                <div className="product-title-wrap">
-                  <span className="section-index">0{index + 1}</span>
-                  <h3>{PRODUCT_LABELS[locale][product]}</h3>
+        <div className="product-sections">
+          {PRODUCTS.map((product, index) => {
+            const productPosts = posts.filter((post) => post.product === product)
+            return (
+              <section className="product-section" id={product} key={product}>
+                <div className="product-heading">
+                  <div className="product-title-wrap">
+                    <span className="section-index">0{index + 1}</span>
+                    <h3>{PRODUCT_LABELS[locale][product]}</h3>
+                  </div>
+                  <span className="post-count">{String(productPosts.length).padStart(2, '0')}</span>
                 </div>
-                <span className="post-count">{String(productPosts.length).padStart(2, '0')}</span>
-              </div>
 
-              {productPosts.length === 0 ? (
-                <p className="empty-state">{copy.emptyState}</p>
-              ) : (
-                <div className="post-grid">
-                  {productPosts.map((post) => (
-                    <article className="post-card" key={`${post.locale}-${post.product}-${post.slug}`}>
-                      <Link href={`/${post.locale}/${post.product}/${post.slug}/`}>
-                        <span className={`post-category ${post.product}`}>
-                          {PRODUCT_LABELS[locale][post.product]}
-                        </span>
-                        <h4>{post.title}</h4>
-                        <p className="post-excerpt">{post.excerpt}</p>
-                        <div className="post-meta">
-                          <time dateTime={post.date}>
-                            {new Date(`${post.date}T00:00:00.000Z`).toLocaleDateString(DATE_LOCALES[locale], {
-                              year: 'numeric',
-                              month: 'short',
-                              day: 'numeric',
-                              timeZone: 'UTC',
-                            })}
-                          </time>
-                          <span aria-hidden="true">↗</span>
-                        </div>
-                      </Link>
-                    </article>
-                  ))}
-                </div>
-              )}
-            </section>
-          )
-        })}
-      </div>
+                {productPosts.length === 0 ? (
+                  <p className="empty-state">{copy.emptyState}</p>
+                ) : (
+                  <div className="post-grid">
+                    {productPosts.map((post) => (
+                      <article className="post-card" key={`${post.locale}-${post.product}-${post.slug}`}>
+                        <Link href={`/${post.locale}/${post.product}/${post.slug}/`}>
+                          <span className={`post-category ${post.product}`}>
+                            {PRODUCT_LABELS[locale][post.product]}
+                          </span>
+                          <h4>{post.title}</h4>
+                          <p className="post-excerpt">{post.excerpt}</p>
+                          <div className="post-meta">
+                            <time dateTime={post.date}>
+                              {new Date(`${post.date}T00:00:00.000Z`).toLocaleDateString(DATE_LOCALES[locale], {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric',
+                                timeZone: 'UTC',
+                              })}
+                            </time>
+                            <span aria-hidden="true">↗</span>
+                          </div>
+                        </Link>
+                      </article>
+                    ))}
+                  </div>
+                )}
+              </section>
+            )
+          })}
+        </div>
+      </PageMain>
 
       <footer className="site-footer">
         <div>
@@ -126,6 +133,6 @@ export default async function LocaleHomePage({
           <a href={sitePath(`/${locale}/feed.xml`)}>{copy.rssLabel} ↗</a>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }
