@@ -123,14 +123,23 @@ export function getPostBySlug(
   return parsePostMarkdown(source, { locale, product, slug })
 }
 
+export function getPostTranslations(
+  product: Product,
+  slug: string,
+  postsDirectory = defaultPostsDirectory,
+): Post[] {
+  return LOCALES
+    .map((locale) => getPostBySlug(locale, product, slug, postsDirectory))
+    .filter((post): post is Post => post !== null)
+}
+
 export function getPostLocaleParams(
   product: Product,
   slug: string,
   postsDirectory = defaultPostsDirectory,
 ): PostStaticParam[] {
-  return LOCALES
-    .filter((locale) => getPostBySlug(locale, product, slug, postsDirectory) !== null)
-    .map((locale) => ({ locale, product, slug }))
+  return getPostTranslations(product, slug, postsDirectory)
+    .map(({ locale }) => ({ locale, product, slug }))
 }
 
 export function getPostStaticParams(
@@ -141,6 +150,16 @@ export function getPostStaticParams(
     product,
     slug,
   }))
+}
+
+export function getPostShareStaticParams(
+  postsDirectory = defaultPostsDirectory,
+): Array<Pick<PostStaticParam, 'product' | 'slug'>> {
+  const groups = new Map<string, Pick<PostStaticParam, 'product' | 'slug'>>()
+  for (const { product, slug } of getPostStaticParams(postsDirectory)) {
+    groups.set(`${product}/${slug}`, { product, slug })
+  }
+  return Array.from(groups.values())
 }
 
 export function renderPostBody(markdown: string): string {

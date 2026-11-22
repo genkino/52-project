@@ -31,6 +31,13 @@ status: approved
 
 Supported locales are `ko`, `en`, and `ja`; supported products are `gatherly` and `zupzup`.
 
+For a single share link, use `/read/{product}/{slug}/` (for example,
+`/read/zupzup/cleanup-helper/`). Only published translations are offered.
+The shared page opens the best available browser language, or English if no
+preference matches. With no language signal, no JavaScript, or no matching
+translation and no English version, readers can choose an available language
+from the page. Direct language URLs and RSS links remain unchanged.
+
 ## Production deployment
 
 The public site is served from Cloudflare Pages at `https://blog.52proj.com`. The repository's `Deploy blog to Cloudflare Pages` GitHub Actions workflow is manual-only: choose **Run workflow** on the `main` branch. It runs `npm ci`, the article approval tests, and a static build before deploying `out/` to the existing `52project-blog` Pages project. The production GitHub environment supplies the non-secret `CLOUDFLARE_ACCOUNT_ID` variable and the `CLOUDFLARE_API_TOKEN` secret. The secret is injected only into the final deployment step, not into tests or the build.
