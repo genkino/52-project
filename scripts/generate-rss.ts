@@ -6,11 +6,13 @@ import { getPostStaticParams } from '../lib/posts'
 const outputRoot = path.join(process.cwd(), 'out')
 
 if (getPostStaticParams().length === 0) {
-  // The reserved Next.js export placeholder is only for build-time compatibility.
-  fs.rmSync(path.join(outputRoot, 'ko', 'gatherly', '_no-approved-posts'), {
-    recursive: true,
-    force: true,
-  })
+  // The reserved Next.js export placeholders are only for build-time compatibility.
+  for (const prefix of ['ko', 'read']) {
+    fs.rmSync(path.join(outputRoot, prefix, 'gatherly', '_no-approved-posts'), {
+      recursive: true,
+      force: true,
+    })
+  }
 }
 
 for (const { locale, xml } of generateAllRSSFeeds()) {
