@@ -13,6 +13,7 @@ export interface PageCopy {
   publishedLabel: string
   backLabel: string
   readLabel: string
+  skipToContent: string
 }
 
 export const PAGE_COPY: Record<Locale, PageCopy> = {
@@ -29,6 +30,7 @@ export const PAGE_COPY: Record<Locale, PageCopy> = {
     publishedLabel: '게시',
     backLabel: '글 목록으로 돌아가기',
     readLabel: '글 읽기',
+    skipToContent: '본문으로 건너뛰기',
   },
   en: {
     brand: '오이공작소',
@@ -43,6 +45,7 @@ export const PAGE_COPY: Record<Locale, PageCopy> = {
     publishedLabel: 'Published',
     backLabel: 'Back to articles',
     readLabel: 'Read article',
+    skipToContent: 'Skip to main content',
   },
   ja: {
     brand: '오이공작소',
@@ -57,6 +60,7 @@ export const PAGE_COPY: Record<Locale, PageCopy> = {
     publishedLabel: '公開日',
     backLabel: '記事一覧へ戻る',
     readLabel: '記事を読む',
+    skipToContent: '本文へスキップ',
   },
 }
 

@@ -11,6 +11,7 @@ import {
   renderPostBody,
 } from '@/lib/posts'
 import { SITE_URL, sitePath } from '@/lib/site'
+import { PageMain, SkipToMain } from '../../../components/page-main'
 
 export const dynamicParams = false
 
@@ -59,7 +60,8 @@ export default async function ArticlePage({
   })
 
   return (
-    <main className="page-shell article-shell">
+    <div className="page-shell article-shell">
+      <SkipToMain locale={post.locale} />
       <header className="site-header">
         <Link className="site-brand" href={`/${post.locale}/`}>
           <span className="brand-mark">52</span>
@@ -74,7 +76,9 @@ export default async function ArticlePage({
               {localeParams.map(({ locale: targetLocale }) => (
                 <Link
                   aria-current={targetLocale === post.locale ? 'page' : undefined}
-                  aria-label={LOCALE_LABELS[targetLocale]}
+                  aria-label={`${targetLocale.toUpperCase()} · ${LOCALE_LABELS[targetLocale]}`}
+                  lang={targetLocale}
+                  hrefLang={targetLocale}
                   href={`/${targetLocale}/${post.product}/${post.slug}/`}
                   key={targetLocale}
                 >
@@ -89,23 +93,25 @@ export default async function ArticlePage({
         </div>
       </header>
 
-      <article className="article-card">
-        <Link className="back-link" href={`/${post.locale}/`}>← {copy.backLabel}</Link>
-        <div className="article-heading">
-          <span className={`post-category ${post.product}`}>
-            {PRODUCT_LABELS[post.locale][post.product]}
-          </span>
-          <h1>{post.title}</h1>
-          <p className="article-excerpt">{post.excerpt}</p>
-          <p className="article-date">
-            {copy.publishedLabel} · <time dateTime={post.date}>{publishedDate}</time>
-          </p>
-        </div>
-        <div
-          className="article-content"
-          dangerouslySetInnerHTML={{ __html: renderPostBody(post.body) }}
-        />
-      </article>
+      <PageMain className="article-card">
+        <article>
+          <Link className="back-link" href={`/${post.locale}/`}>← {copy.backLabel}</Link>
+          <div className="article-heading">
+            <span className={`post-category ${post.product}`}>
+              {PRODUCT_LABELS[post.locale][post.product]}
+            </span>
+            <h1>{post.title}</h1>
+            <p className="article-excerpt">{post.excerpt}</p>
+            <p className="article-date">
+              {copy.publishedLabel} · <time dateTime={post.date}>{publishedDate}</time>
+            </p>
+          </div>
+          <div
+            className="article-content"
+            dangerouslySetInnerHTML={{ __html: renderPostBody(post.body) }}
+          />
+        </article>
+      </PageMain>
 
       <footer className="site-footer">
         <div>
@@ -117,6 +123,6 @@ export default async function ArticlePage({
           <a href={sitePath(`/${post.locale}/feed.xml`)}>{copy.rssLabel} ↗</a>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }
